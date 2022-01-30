@@ -3,7 +3,7 @@
  */
 
 #main-text * {
-    font-family: "Raleway", "Segoe UI", Arial, sans-serif;
+    font-family: "微软雅黑", "Segoe UI", Arial, sans-serif;
 }
 
 /*Titles*/
@@ -47,7 +47,7 @@
     padding: 35px 30px 0 30px;
     height: 100%;
     width: 50%;
-    font-family: "Raleway", "Segoe UI", Arial, sans-serif;
+    font-family: "微软雅黑", "Segoe UI", Arial, sans-serif;
     float: left;
 }
 
@@ -70,9 +70,9 @@
     margin-bottom: 0.5rem;
 }
 
-#main-text .product-text p, #main-text .product-text ul {
+#main-text .product-text ul {
     color: #8d8d8d;
-    font-size: 18px;
+    font-size: 13px;
     overflow: hidden;
 }
 

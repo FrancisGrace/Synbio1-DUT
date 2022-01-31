@@ -25,29 +25,21 @@ function checkBrowser() {
 }
 
 /**
- * Implement the function of top-scroll button
+ * Control the appearance of top-scroll button
  */
 function setTopScroll() {
     let f = function () {
         let textT = document.getElementById("main-text").offsetTop;
-        let footerT = document.getElementById("footer").offsetTop;
+        let footerT = document.getElementById("footer-point").offsetTop;
         let sidebarH = document.getElementById("sidebar") ? document.getElementById("sidebar").clientHeight : 0;
         let currentH = document.documentElement.scrollTop || document.body.scrollTop;
         let topScroll = document.getElementById("top-scroll");
         if (currentH > textT - 130 && currentH + sidebarH < footerT - 130) {
-            topScroll.setAttribute("class", "top-scroll-active");
+            topScroll.classList.add("top-scroll-active");
         } else {
-            topScroll.setAttribute("class", "");
+            topScroll.classList.remove("top-scroll-active")
         }
     }
     window.addEventListener('resize', f);
     window.addEventListener('scroll', f);
-    console.log(document.getElementById('top-scroll'))
-    ts.addEventListener('click', function () {
-        scroll({
-            top: 0,
-            left: 0,
-            behavior: 'smooth'
-        });
-    });
 }

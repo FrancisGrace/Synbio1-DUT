@@ -9,7 +9,6 @@
 function init() {
     checkBrowser();
     setTopScroll();
-    setNav();
 }
 
 /**
@@ -43,7 +42,7 @@ function setTopScroll() {
     }
     window.addEventListener('resize', f);
     window.addEventListener('scroll', f);
-    let ts = document.getElementById('top-scroll').childNodes[1];
+    console.log(document.getElementById('top-scroll'))
     ts.addEventListener('click', function () {
         scroll({
             top: 0,
@@ -51,15 +50,4 @@ function setTopScroll() {
             behavior: 'smooth'
         });
     });
-}
-
-/**
- * Set the top of the navigation bar
- */
-function setNav() {
-    let igemNav = document.getElementById('top_menu_14');
-    let h = '0';
-    if (igemNav)
-        h = igemNav.offsetHeight + 'px';
-    document.getElementById('nav-bar').style.top = h;
 }

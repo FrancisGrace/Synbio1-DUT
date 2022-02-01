@@ -1,173 +1,284 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>Design</title>
+    <title>设计 - DUT</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <script src="js/jquery.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/vue.min.js"></script>
     <link rel="stylesheet" href="css/general.css">
     <script src="js/general.js"></script>
+    <link rel="stylesheet" href="css/sidebar.css">
     <link rel="stylesheet" href="css/article.css">
+    <script src="js/sidebar.js" defer></script>
 </head>
 <body>
 <nav id="nav-bar" class="navbar navbar-expand-lg navbar-light sticky-top"></nav>
-<div id="title" class="col-12" style='-o-background-image: url("https://2021.igem.org/wiki/images/b/ba/T--DUT_China--t_design.jpg");
-    -moz-background-image: url("https://2021.igem.org/wiki/images/b/ba/T--DUT_China--t_design.jpg");
-    -webkit-background-image: url("https://2021.igem.org/wiki/images/b/ba/T--DUT_China--t_design.jpg");
-    background-image: url("https://2021.igem.org/wiki/images/b/ba/T--DUT_China--t_design.jpg");'>
-    <div>Design</div>
+<div id="title" class="col-12" style='-o-background-image: url("img/title/design.jpg");
+    -moz-background-image: url("img/title/design.jpg");
+    -webkit-background-image: url("img/title/design.jpg");
+    background-image: url("img/title/design.jpg");'>
+    <div>设计<br/>Design</div>
 </div>
+<div id="sidebar" v-bind:class="{'sidebar-active':isActive}">
+    <table>
+        <tr v-for="(value,key,index) in articles">
+            <td>
+                <canvas width="40" height="40" class="canvas"></canvas>
+            </td>
+            <td class="side-item" v-bind:class="{'side-item-active':itemActive[key]}">
+                <a v-bind:href="'#article'+(key+1)">
+                    {{value.innerHTML}}
+                </a>
+            </td>
+        </tr>
+    </table>
+</div>
+<!--<style>-->
+<!--    #main-text h2 {-->
+<!--        text-transform: initial;-->
+<!--    }-->
+<!--</style>-->
 <section id="main-text">
     <article class="article">
-        <h1>Design</h1>
-        <p>In 2016, Yoshida et al. [1] reported the discovery of the bacterium, <i>Ideonella
-            sakaiensis</i> 201-F6, which develops
-            a two-enzyme system to deconstruct PET plastic to TPA and EG molecules, which could be effectively
-            catabolized
-            as a carbon and energy sources for cells. Further research of this two enzymes system reveals that enzyme
-            PETase
-            is a cutinase-like serine hydrolase that attacks the PET plastic polymer with the highest efficiency in mild
-            temperature among all previously discovered PET degradation enzymes. The metagenome-derived leaf-branch
-            compost
-            cutinase (LCC) shows higher activity on low crystallinity PET film degradation [2]. However, LCC is still
-            not
-            generally applicable due to the cost and high applied optimum temperature around 72 °C [2], which highly
-            limit
-            its further application in engineered bacteria bio-degradation system. Furthermore, the percentage of PET
-            degradation intermediates MHET generated via LCC were near to 60% [3], which could not be removed by MHETase
-            effectively due to the possible loss of its enzymatic activity at LCC applied temperature. Compared to LCC,
-            the
-            MHET removing efficiency in PETase and MHETase coexisting system was near to 100% [4]. LCC reveals near 5.5
-            times and 4 times lower enzymatic activity to PET film and high crystallinity PET substrate at 30 °C
-            compared to
-            PETase [1] [5]. PETase was considerably more active against PET film at low temperatures than other PET
-            degradation enzymes including TfH, LCC, and FsC [1]. And more efforts of PETase protein rational evolution
-            are
-            made and these works largely improved enzyme PETase thermostability with a Tm value that was increased by
-            8.81
-            °C and reacting activity by around 14-fold at 40 °C [5], whose activity is even higher than LCC and
-            BhrPETase
-            isolated from bacterium HR29 [3][5]. Furthermore, in a latter research, highly synergistic relationship
-            between
-            PETase and MHETase was discovered in the conversion of amorphous PET film to monomers [4], which effectively
-            accelerate PET degradation. However, this two enzymes system may be still limited due to enzymatic loss
-            caused
-            by protein fusion, inhibition effects and diffusion of intermediates. And methods of rational evolution of
-            protein may not be applicable to further improve the overall turnover rate [6]. In detail, the MHET
-            molecules
-            produced via PET degradation may be competitive to PETase active sites, which was revealed via calculation
-            results shown in this work. Despite of this, MHET molecules diffusion in space may also be a problem for
-            MHETase
-            remove MHET in time.</p>
+        <h1>设计</h1>
+        <p>2016年，吉田等人[1]报道了一种名为<i>Ideonella sakaiensis</i>
+            201-F6的细菌的发现，该细菌开发了一种双酶系统，将PET塑料分解为TPA和EG分子，这两种分子可以有效地分解代谢为细胞的碳源和能源。对这两种酶系统的进一步研究表明，PETase是一种角质酶样丝氨酸水解酶，在所有已发现的PET降解酶中，它在温和温度下以最高的效率攻击PET塑料聚合物。宏基因组衍生的叶枝堆肥角质酶（LCC）对低结晶度PET膜降解显示出更高的活性[2]。然而，由于成本较高，且最适温度在72℃左右[2]，LCC仍未得到广泛应用，这极大地限制了其在工程菌生物降解系统中的进一步应用。此外，通过LCC产生的PET降解中间体MHET的百分比接近60%[3]，其不能被MHETase有效去除，因为其在LCC应用温度下可能丧失其酶活性。与LCC相比，PETase和MHETase共存体系中MHET的去除效率接近100%[4]。与PETase[1][5]相比，在30℃下，LCC对PET膜和高结晶度PET底物的酶活性分别低近5.5倍和4倍。与其他PET降解酶（包括TFH、LCC和FSC）相比，PETase在低温下对PET膜的活性更高[1]。对PETase蛋白的理性进化进行了更多的努力，这些工作大大提高了酶PETase的热稳定性，TM值提高了8.81°C，在40°C时的反应活性提高了约14倍[5]，其活性甚至高于LCC和从细菌HR29中分离的BhrPETase[3][5]。此外，在后来的研究中，
+            在将无定形PET薄膜转化为单体的过程中，发现了PETase和MHETase之间的高度协同关系[4]，这有效地加速了PET的降解。然而，由于蛋白质融合、抑制效应和中间体扩散引起的酶损失，这两种酶系统可能仍然受到限制。蛋白质理性进化的方法可能不适用于进一步提高整体周转率[6]。详细地说，通过PET降解产生的MHET分子可能与PETase活性位点竞争，这通过本工作中显示的计算结果来揭示。尽管如此，MHET分子在空间中的扩散也可能是MHETase及时去除MHET的一个问题。
+        </p>
         <div class="figures">
             <div class="row">
-                <img src="https://2021.igem.org/wiki/images/f/f8/T--DUT_China--design11.png" alt=""
+                <img src="img/design/design11.png" alt=""
                      class="col-12 col-md-8 mx-auto">
             </div>
         </div>
-        <p class="caption text-md-center">Figure 1: PET degradation pathway</p>
+        <p class="caption text-md-center">图1 PET降解途径</p>
 
 
-        <p>Therefore, in this work, we designed an intricate multidomain protein scaffold composed of short peptide tags
-            of
-            RIAD [8] and RIDD [9], enzymes of PETase and MHETase and protein hydrophobin4 [8], in which the enzymes
-            constructed in near positions to each other may work with highly synergistic relationship. All proteins
-            involved
-            have unique functions in this system. PETase and MHETase are two enzymes involved deconstructing polymer PET
-            plastic to MHET and MHET to TPA molecules, respectively. And hydrophobin4, a small fungal protein, possess
-            positive effects on altering the physicochemical properties of PET surfaces and enzyme aggregation
-            enhancement
-            when it was fused with PET degradation enzyme cutinase [10]. Here, hydrophobin4 are involved in our designed
-            system with possible functions of adhering to PET polymers and altering the physicochemical properties of
-            PET
-            for degradation improvement [11]. The peptides of RIDD and RIAD originated from cAMP-dependent protein
-            kinase
-            (PKA) and the A kinase-anchoring proteins (AKAPs), respectively. The RIAD peptide is capable of specifically
-            binds to the RIDD dimer with strong affinity [12]. The following two features make them ideal protein
-            binding
-            modular for our system assembly: (1) the tiny size (44 and 18 amino acids, respectively), which minimizes
-            the
-            disturbances to the structure and activity of the enzymes when fused with these peptides, (2) the strong
-            binding
-            affinity (with a KD of 1.2 nM between RIDD dimer and RIAD peptide demonstrated in our colleagues' previous
-            work
-            [12]) to ensure the stability of the whole enzyme complexes in the environment.</p>
+        <p>
+            因此，在本工作中，我们设计了一种复杂的多结构域蛋白质支架，由RIAD[8]和RIDD[9]的短肽标签、PETase和MHETase的酶以及蛋白质疏水蛋白4[8]组成，其中构建在彼此邻近位置的酶可能以高度协同的关系工作。所有参与的蛋白质在这个系统中都有独特的功能。PETase和MHETase是分别参与将聚合物PET塑料解离为MHET和将MHET解离为TPA分子的两种酶。疏水蛋白4是一种小的真菌蛋白，当其与PETase融合时，对改变PET表面的理化性质和酶聚集增强具有积极作用[10]。这里，疏水蛋白4参与了我们设计的系统，其可能具有粘附到PET聚合物和改变PET的物理化学性质以改善降解的功能[11]。
+            RIDD和RIAD肽分别来源于cAMP依赖的蛋白激酶（PKA）和A激酶锚定蛋白（AKAPs）。RIAD肽能够以强亲和力特异性结合RIDD二聚体[12]。以下两个特征使它们成为用于我们的系统组装的理想的蛋白质结合模块：（1）微小的尺寸（分别为44和18个氨基酸），这使得当与这些肽融合时对酶的结构和活性的干扰最小化，（2）强结合亲和力（在以前的工作[12]中证明了RIDD二聚体和RIAD肽之间的Kd为1.2nM），以确保整个酶复合物在环境中的稳定性。</p>
         <div class="figures">
             <div class="row">
-                <img src="https://2021.igem.org/wiki/images/a/ab/T--DUT_China--design12.png" alt=""
+                <img src="img/design/design12.png" alt=""
                      class="col-12 col-md-8 mx-auto">
             </div>
         </div>
 
-        <p class="caption">Figure 2: Schematic diagram of this system[12] (The assembly of tri-enzyme units.
-            E1,
-            E2: enzymes; green and blue structure: RIDD dimer; black line: linker; pink structure: RIAD; one orange
-            circle:
-            cysteine; two orange circles: disulfide bond)</p>
+        <p class="caption">图2 该系统的示意图[12]（三酶单元的组装。E1、E2：酶；绿色和蓝色结构：RIDD二聚体；黑线：链接器；粉红色结构：Riad；一个橙色圆圈：半胱氨酸；两个橙色圆圈：二硫键）</p>
         <div class="figures">
             <div class="row">
-                <img src="https://2021.igem.org/wiki/images/b/bb/T--DUT_China--design13.png" alt=""
+                <img src="img/design/design13.png" alt=""
                      class="col-12 col-md-8 mx-auto">
             </div>
         </div>
-        <p class="caption text-md-center">Figure 3: Three-protein complex assembly schematic diagram.</p>
-        <p>In summary, we plan to construct a three-enzyme complex of RIDD-PETase, RIDD-MHETase and RIAD-hydrophobin4
-            that
-            is combined with RIDD-RIDD-RIAD (Figure 3), and use this complex to degrade PET plastic effectively.</p>
+        <p class="caption text-md-center">图3 三蛋白复合物组装示意图</p>
+        <p>总之，我们计划构建RIDD-PETase、RIDD-MHETase和RIAD-疏水蛋白4的三酶复合物，并将其与RID-RID-RIAD结合（图3），并使用该复合物有效降解PET塑料。</p>
         <div class="figures">
             <div class="row">
-                <img src="https://2021.igem.org/wiki/images/5/5a/T--DUT_China--design14.png" alt=""
+                <img src="img/design/design14.png" alt=""
                      class="col-12">
             </div>
         </div>
 
-        <p class="caption text-md-center">Figure 4: Plasmid construction stagey</p></article>
-    <article class="article"><h1>References</h1>
-        <p>
-            [1] Shosuke Yoshida, Kazumi Hiraga, Toshihiko Takehana, Ikuo Taniguchi, Hironao Yamaji, Yasuhito Maeda,
-            Kiyotsuna Toyohara, Kenji Miyamoto, Yoshiharu Kimura, Kohei Oda, A bacterium that degrades and assimilates
-            poly (ethylene terephthalate), 2016.
-        </p>
-        <p>
-            [2] V. Tournier, C. M. Topham, A. Gilles, B. David, C. Folgoas, E. Moya-Leclair, E. Kamionka, M.-L.
-            Desrousseaux, H. Texier, S. Gavalda, M. Cot, E. Guémard, M. Dalibey, J. Nomme, G. Cioci, S. Barbe, M.
-            Chateau, I. André1, S. Duquesne, A. Marty, An engineered PET depolymerase to break down and recycle plastic
-            bottles, 2020.
-        </p>
-        <p>
-            [3] Xingxiang Xi, Kefeng Ni, Helong Hao, Yuepeng Shang, Bo Zhao, Zhen Qian, Secretory expression in Bacillus
-            subtilis and biochemical characterization of a highly thermostable polyethylene terephthalate hydrolase from
-            bacterium HR29, 2021.
-        </p>
-        <p>
-            [4] Brandon C. Knotta, Erika Ericksona, Mark D. Allenb, Japheth E. Gado, Rosie Graham, Fiona L. Kearns,
-            Isabel Pardo, Ece Topuzlu, Jared J. Anderson, Harry P. Austin, Graham Dominick, Christopher W. Johnson,
-            Nicholas A. Rorrer, Caralyn J. Szostkiewicz, Valérie Copié, Christina M. Paynec, H. Lee Woodcock, Bryon S.
-            Donohoef, Gregg T. Beckham, and John E. McGeehan, Characterization and engineering of a two-enzyme system
-            for plastics depolymerization, 2019.
-        </p>
-        <p>
-            [5] Hyeoncheol Francis Son, In Jin Cho, Seongjoon Joo, Hogyun Seo, Hye-Young Sagong, So Young Choi, Sang Yup
-            Lee, Kyung-Jin Kim, Rational Protein Engineering of Thermo-Stable PETase from <i>Ideonella sakaiensis</i> for
-            Highly Efficient PET Degradation, 2019.
-        </p>
-        <p>
-            [6] Erickson E, Shakespeare TJ, Bratti F, Buss BL, Graham R, Hawkins MA, König G, Michener WE, Miscall J,
-            Ramirez KJ, Rorrer NA, Zahn M, Pickford AR, McGeehan JE, Beckham G, Comparative performance of PETase as a
-            function of reaction conditions, substrate properties, and product accumulation, 2021.
-        </p>
-        <p>[7] Boneta S, Arafet K, Moliner V, QM/MM Study of the Enzymatic Biodegradation Mechanism of Polyethylene
-            Terephthalate, 2021.
-        </p>
-        <p>
-            [8] Carlson, C. R. et al. Delineation of type I protein kinase A-selective signaling events using an RI
-            anchoring disruptor. <i>J. Biol. Chem.</i> 281, 21535–21545, 2006. 24.
-        </p>
-        <p>[9] Gold, M. G. et al. Molecular basis of AKAP specificity for PKA regulatory subunits. <i>Mol. Cell</i> 24,
-            383–395, 2006.
-        </p>
+        <p class="caption text-md-center">图4 质粒构建阶段</p></article>
+    <h2>参考文献</h2>
+    <p>
+        [1] Shosuke Yoshida, Kazumi Hiraga, Toshihiko Takehana, Ikuo Taniguchi, Hironao Yamaji, Yasuhito Maeda,
+        Kiyotsuna Toyohara, Kenji Miyamoto, Yoshiharu Kimura, Kohei Oda, A bacterium that degrades and assimilates
+        poly (ethylene terephthalate), 2016.
+    </p>
+    <p>
+        [2] V. Tournier, C. M. Topham, A. Gilles, B. David, C. Folgoas, E. Moya-Leclair, E. Kamionka, M.-L.
+        Desrousseaux, H. Texier, S. Gavalda, M. Cot, E. Guémard, M. Dalibey, J. Nomme, G. Cioci, S. Barbe, M.
+        Chateau, I. André1, S. Duquesne, A. Marty, An engineered PET depolymerase to break down and recycle plastic
+        bottles, 2020.
+    </p>
+    <p>
+        [3] Xingxiang Xi, Kefeng Ni, Helong Hao, Yuepeng Shang, Bo Zhao, Zhen Qian, Secretory expression in Bacillus
+        subtilis and biochemical characterization of a highly thermostable polyethylene terephthalate hydrolase from
+        bacterium HR29, 2021.
+    </p>
+    <p>
+        [4] Brandon C. Knotta, Erika Ericksona, Mark D. Allenb, Japheth E. Gado, Rosie Graham, Fiona L. Kearns,
+        Isabel Pardo, Ece Topuzlu, Jared J. Anderson, Harry P. Austin, Graham Dominick, Christopher W. Johnson,
+        Nicholas A. Rorrer, Caralyn J. Szostkiewicz, Valérie Copié, Christina M. Paynec, H. Lee Woodcock, Bryon S.
+        Donohoef, Gregg T. Beckham, and John E. McGeehan, Characterization and engineering of a two-enzyme system
+        for plastics depolymerization, 2019.
+    </p>
+    <p>
+        [5] Hyeoncheol Francis Son, In Jin Cho, Seongjoon Joo, Hogyun Seo, Hye-Young Sagong, So Young Choi, Sang Yup
+        Lee, Kyung-Jin Kim, Rational Protein Engineering of Thermo-Stable PETase from <i>Ideonella sakaiensis</i>
+        for
+        Highly Efficient PET Degradation, 2019.
+    </p>
+    <p>
+        [6] Erickson E, Shakespeare TJ, Bratti F, Buss BL, Graham R, Hawkins MA, König G, Michener WE, Miscall J,
+        Ramirez KJ, Rorrer NA, Zahn M, Pickford AR, McGeehan JE, Beckham G, Comparative performance of PETase as a
+        function of reaction conditions, substrate properties, and product accumulation, 2021.
+    </p>
+    <p>[7] Boneta S, Arafet K, Moliner V, QM/MM Study of the Enzymatic Biodegradation Mechanism of Polyethylene
+        Terephthalate, 2021.
+    </p>
+    <p>
+        [8] Carlson, C. R. et al. Delineation of type I protein kinase A-selective signaling events using an RI
+        anchoring disruptor. <i>J. Biol. Chem.</i> 281, 21535–21545, 2006. 24.
+    </p>
+    <p>[9] Gold, M. G. et al. Molecular basis of AKAP specificity for PKA regulatory subunits. <i>Mol. Cell</i> 24,
+        383–395, 2006.
+    </p>
+    <article class="article">
+        <h1>概念证明</h1>
+        <p>为了对整个项目进行概念验证，我们提出了以下想法。这些实验和原型可能会增加我们概念的可信度，使其更符合现实场景。</p>
+        <article class="article">
+            <h2>1. 该三酶复合物可有效降解PET塑料片材，降解效率较单一酶反应有所提高。</h2>
+            <p>
+                我们构建的酶复合物可以有效地降解PET塑料，其降解效率高于工程上成功引入的单一酶（RIDD-PETase）的处理效率。降解效率的提高可以证明我们的概念的可行性。在与粗酶溶液和PET塑料片（结晶度12%）孵育7天后，TPA产量达到0.9016mM，而不是使用酶复合物，仅使用一部分（RIDD-PETase）处理TPA产量仅为0.4815mM（图1）。
+            </p>
+            <div class="figures">
+                <div class="row">
+                    <div class="col-12 col-md-8 mx-auto">
+                        <img src="img/design/poc_1.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <p class="caption text-md-center">图1 各实验组TPA产品浓度</p>
+            <p>同时，我们的扫描电镜结果也证明了我们构建酶复合物概念的可行性和有效性。有关详细信息，请参阅<a href="Result.html" target="_blank">结果与讨论</a>。对介质处理后的PET塑料片材进行扫描电镜检查，结果符合预期。用大肠杆菌BL21培养基或MD培养基处理的塑料片几乎没有划痕或孔洞。PD处理后的塑料片有一些明显的划痕，而PD-MD-hA处理后的塑料片。表面布满了划痕，同时密密麻麻地布满了各种形状的孔洞。这次扫描电镜测试更直观地证明了我们构建的三酶复合物比单酶降解PET塑料具有更好的降解功能。
+            </p>
+            <div class="figures">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <img src="img/design/poc_2a.jpg" alt="">
+                        <p>(a)</p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <img src="img/design/poc_2b.jpg" alt="">
+                        <p>(b)</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <img src="img/design/poc_2c.jpg" alt="">
+                        <p>(c)</p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <img src="img/design/poc_2d.jpg" alt="">
+                        <p>(d)</p>
+                    </div>
+                </div>
+            </div>
+            <p class="caption">图2 扫描电子显微镜（a）在<i>E. coli BL21</i>中处理的PET塑料片。（b）在<i>E. coli BL21/pET28a-PD</i>中处理的PET塑料片。（c）在<i>E.
+                coli BL21/pET28a-M</i>中处理的PET塑料片。（d）在<i>E.
+                coli BL21/pET28a-PD-MD-hA</i>培养基中处理的PET塑料片。</p>
+
+        </article>
+        <article class="article">
+            <h2>2. 生长曲线法证明了工程菌<i>E.coli BL21/pET28a-PD-MD-hA</i>具有工业化大规模培养的可行性。</h2>
+            <p>为了获得大量的蛋白质，需要以相对高的密度培养工程菌。然而，将<i>pET28a-PD-MD-hA</i>导入工程菌中，由于质粒的负载，可能会减慢其生长和复制速度，从而增加了工业化大规模生产酶的细菌培养过程的成本。因此，我们决定用1L的LB培养基在37°C下培养不同类型的细菌，并比较<i>E.coli
+                BL21/pET28a-PD-MD-hA</i>和<i>E.coli BL21</i>（野生型）、<i>E.coliBL21/pET28a</i>的生长曲线，以考察我们构建的工程菌的生长情况。</p>
+            <div class="figures">
+                <div class="row">
+                    <div class="col-12 col-md-8 mx-auto">
+                        <img src="img/design/poc_3.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <p class="caption">图3 <i>E.coli BL21</i>、<i>E.coli BL21/pET28a</i>和<i>E.coliBL21/pET28a-PD-MD-hA</i>的生长曲线（使用酶标仪，当OD600≈0.4时进入平台期）
+            </p>
+            <p>首先，我们将<i>E.coli BL21</i>、<i>E.coli BL21/pET28a</i>和<i>E.coli BL21/pET28a-PD-MD-hA</i>分别在不含卡那霉素的培养基中培养，并绘制它们的生长曲线，以观察导入pET28a-PD-MD-hA质粒是否对细菌生长有影响。如图3所示，<i>E.coli
+                BL21/pET28a-PD-MD-hA</i>的生长曲线与<i>E.coli
+                BL21</i>和<i>E.coli BL21/pET28a</i>的生长趋势基本相同，表明质粒<i>pET28a-PD-MD-hA</i>对<i>E.coli BL21</i>的生长没有影响。</p>
+
+        </article>
+        <article class="article">
+            <h2>3. 为了便于酶的分离纯化，甚至在环境中原位降解PET塑料，我们研究了细菌分泌的信号肽，为后续的蛋白分泌工作奠定基础。</h2>
+            <p>
+                PelB是使用SecB依赖性途径的信号肽，并且已经在商业上用于PET表达系统（图4）。我们最初计划使用PelB作为信号肽来实现目标蛋白的有效分泌，但实验中并没有达到预期的目的。PelB的正常功能与后续20个氨基酸的疏水性密切相关，而我们系统中使用的RIDD和RIAD不符合其疏水性要求，导致酶分泌失败。</p>
+            <div class="figures">
+                <div class="row">
+                    <div class="col-12">
+                        <img src="img/design/poc_4.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <p class="caption text-md-center">图4 SecB依赖途径的信号肽原理</p>
+            <p>在PETase表达系统中，SecB依赖的途径已经建立，有多种信号肽，我们可以从中筛选出能够适应RIDD和RIAD疏水性的信号肽，如PhoA、OmpC、OmpF、OmpA、内切木聚糖酶和MalE。</p>
+            <div class="figures">
+                <div class="row">
+                    <div class="col-12">
+                        <img src="img/design/poc_5.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <p class="caption text-md-center">图5 后期团队可以尝试的一些不同类型的信号肽</p>
+
+        </article>
+        <article class="article">
+            <h2>4. 我们研究了未来的PD-MD-hA分泌细菌<i>E.coli BL21/pET28a-PD-MD-hA</i>（分泌型）与发酵罐中PET塑料降解产物的相容性，证明其适用于工业应用。</h2>
+
+            <p>如果构建了能够分泌PD-MD-hA的工程菌，可能的应用将是在发酵罐中将<i>E.coli BL21/pET28a-PD-MD-hA</i>（分泌型）与PET塑料共培养，以实现塑料的生物降解。然而，在这种方法中，我们必须解决一个问题：PET塑料降解的最终产物，TPA和EG可能会对细菌的生长产生负面影响，因此我们研究了不同浓度的TPA和EG下工程菌的生长曲线。
+            </p>
+            <div class="figures">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <img src="img/design/poc_6a.svg" alt="">
+                        <p>(a)</p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <img src="img/design/poc_6b.svg" alt="">
+                        <p>(b)</p>
+                    </div>
+                </div>
+            </div>
+            <p class="caption">图6 （a）：将浓度为0、0.1%、1.0%、5.0%的EG加入到<i>E.coli BL21/pET28a-PD-MD-hA</i>的培养基中；（b）：在<i>E.coli
+                BL21/pET28a-PD-MD-hA</i>培养基中分别加入0、0.1mM、1.0mM、10.0mM的TPA</p>
+
+            <p>
+                我们需要验证PET降解产物——TPA和EG是抑制还是促进细菌生长。如图6左侧所示，在培养基中分别加入浓度为0%、0.1%、1%和5%的EG。经过19小时的观察，4条生长曲线基本一致，证明eg对细菌的生长无明显影响。另一方面，在图6右侧，可以看到大肠杆菌BL21在低TPA含量为0、0.1mm和1mm的培养基中正常生长。然而，当TPA含量过高（10mM）时，E.coli
+                BL21不生长。显然，高浓度的TPA会抑制细菌生长，因此在细菌培养或工业生产中，需要去除或进一步降解TPA，以避免其在PET降解过程中浓度过高。</p>
+
+        </article>
+        <article class="article">
+            <h2>5. <i>E.coli BL21/pET28a-PD-MD-hA</i>和<i>E.coli BL21/pET28a-PD-MD-hA</i>（分泌型）的自杀开关</h2>
+            <h3>①<i>E.coli BL21/pET28a-PD-MD-hA</i>（阿拉伯糖启动子）和<i>E.coli BL21/pET28a-</i></h3>
+            <p>设计了内部杀伤开关，以快速清除检测后残留在胃肠道中的Hetoul。这种细菌裂解蛋白可以破坏细菌细胞膜的稳定性，导致细胞死亡。阿拉伯糖可以通过消化道摄入而不被吸收，这使其成为体内杀伤开关的理想诱导剂。</p>
+            <p>由噬菌体Phi X 17编码的内部杀伤开关是由阿拉伯糖诱导的启动子pBAD（<a href="http://parts.igem.org/Part:BBa_K206000" target="_blank">BBA_K206000</a>）、pBAD阻遏物AraC（<a
+                    href="http://parts.igem.org/Part:BBa_I13458" target="_blank">BBA_I13458</a>）和毒性蛋白E（<a
+                    href="http://parts.igem.org/Part:BBa_K2500006" target="_blank">BBA_K2500006</a>）组成。</p>
+
+
+            <div class="figures">
+                <div class="row">
+                    <div class="col-12 col-md-8 mx-auto">
+                        <img src="img/design/poc_7.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <p class="caption text-sm-center">图7 内部杀伤开关</p>
+
+            <h3>②环境中<i>E.coli BL21/pET28a-PD-MD-hA</i>（分泌型）的自杀开关</h3>
+            <p>为了控制环境中可能存在的基因污染，我们决定采用一个由<a href="http://2021.igem.org/Team:Tongji_China" target="_blank">同济大学iGEM
+                2021团队</a>启发的断路开关系统。</p>
+            <div class="figures">
+                <div class="row">
+                    <div class="col-12">
+                        <img src="img/design/poc_8.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <p class="caption text-sm-center">图8 切断开关原理图</p>
+
+            <p>该断路开关系统的工作流程包括三种模式。在传播阶段，切断开关系统被沉默，其中仅合成TpiAB转运蛋白。由于终止子B0015的存在，不会产生毒素。</p>
+            <p>当TPA被先前的iGEM团队<a href="http://2018.igem.org/Team:UMaryland" target="_blank">Umaryland</a>提供的传感器系统检测到时，表明降解过程已经开始，TphC转录激活因子将被激活，从而启动抗毒素和DRE重组酶的产生。重组酶将依次切割终止子B0015，这导致毒素表达回路的永久激活。然而，在这种情况下，抗毒素和毒素都存在于系统中，因此细胞本身将继续茁壮成长，随后发生降解。
+            </p>
+            <p>在检测到TPA后，只要TPA浓度降低到一定水平，即降解结束或细胞分散在环境中，TphC激活剂就会关闭，终止抗毒素的合成。而毒素的产生不受TphC激活剂的调节并持续，细胞将被杀死。</p>
+            <h2>鸣谢：</h2>
+            <p>我们要感谢<a href="http://2021.igem.org/Team:Tongji_China" target="_blank">同济大学团队</a>对系统设计的启发。我们也很欣赏<a
+                    href="http://2018.igem.org/Team:UMaryland" target="_blank">Umaryland团队</a>之前在TPA传感器系统上所做的工作。</p>
+
+        </article>
     </article>
 </section>
 <div id="footer-point"></div>

@@ -1,106 +1,247 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>Contribution</title>
+    <title>元件 - DUT</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <script src="js/jquery.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/vue.min.js"></script>
     <link rel="stylesheet" href="css/general.css">
     <script src="js/general.js"></script>
+    <link rel="stylesheet" href="css/sidebar.css">
     <link rel="stylesheet" href="css/article.css">
+    <script src="js/sidebar.js" defer></script>
 </head>
 <body>
 <nav id="nav-bar" class="navbar navbar-expand-lg navbar-light sticky-top"></nav>
-<div id="title" class="col-12" style='-o-background-image: url("https://2021.igem.org/wiki/images/9/91/T--DUT_China--t_contribution.jpg");
-    -moz-background-image: url("https://2021.igem.org/wiki/images/9/91/T--DUT_China--t_contribution.jpg");
-    -webkit-background-image: url("https://2021.igem.org/wiki/images/9/91/T--DUT_China--t_contribution.jpg");
-    background-image: url("https://2021.igem.org/wiki/images/9/91/T--DUT_China--t_contribution.jpg");'>
-    <div>Contribution</div>
+<div id="title" class="col-12" style='-o-background-image: url("img/title/parts.jpg");
+    -moz-background-image: url("img/title/parts.jpg");
+    -webkit-background-image: url("img/title/parts.jpg");
+    background-image: url("img/title/parts.jpg");'>
+    <div>元件<br/>Parts</div>
 </div>
-<section id="main-text">
-    <p>
-        Our contribution to iGEM will mainly show two aspects on this webpage. On the one hand, it is a supplement to
-        the existing parts content. The supplementary parts content is as follows; on the other hand, the peptides that
-        can be used to construct enzyme complexes, RIDD and RIAD introduce the iGEM community to provide a new idea for
-        other teams to construct enzyme complexes in the future and combines our literature research and practical
-        experience to give some suggestions.
-    </p>
+<div id="sidebar" v-bind:class="{'sidebar-active':isActive}">
     <table>
-        <tr>
-            <th>Parts number</th>
-            <th>Supplementary summary</th>
-        </tr>
-        <tr>
+        <tr v-for="(value,key,index) in articles">
             <td>
-                <a href="http://parts.igem.org/Part:BBa_K2010000" target="_blank">BBa_K2010000</a>
+                <canvas width="40" height="40" class="canvas"></canvas>
             </td>
-            <td>
-                The registry part page has been supplemented with a directed evolution of an enzyme that efficiently
-                degrades PET plastic, and we used this enzyme to construct an enzyme complex.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <a href="http://parts.igem.org/Part:BBa_K2013003" target="_blank">BBa_K2013003</a>
-            </td>
-            <td>
-                The registry part page has supplemented new data collected from laboratory experiments by Ailurus
-                vec<sup>TM</sup> and the literature content of the fusion expression of MHETase and PETase.
+            <td class="side-item" v-bind:class="{'side-item-active':itemActive[key]}">
+                <a v-bind:href="'#article'+(key+1)" style="font-size: 12px;">
+                    {{value.innerText}}
+                </a>
             </td>
         </tr>
     </table>
-    <p>
-        Studies have shown discoveries in the interaction of RIAD-RIDD dimer or trimer (two RIDD with one RIAD)
-        peptides. These two types of peptides have a strong binding affinity to each other. Inspired by this discovery,
-        we proposed the idea that <i>Is</i>PETase and MHETase can be fused with RIDD and RIAD, respectively so that
-        closer
-        physical contact with the active sites of these two enzymes can significantly accelerate PET degradation through
-        intermediate transmission. We further accelerate the rate of enzyme degradation without interfering with the
-        structure of the enzyme active site or enzyme activity. The final result of the experiment confirmed our initial
-        idea.
-    </p>
-    <p>
-        Through experiments, we understand the in-depth mechanism of action between each of the critical components and
-        calculate the response of the intermediate product to the enzyme, which can help us better interpret our system.
-    </p>
-    <div class="figures">
-        <div class="col-12 col-md-8 mx-auto">
-            <img src="https://2021.igem.org/wiki/images/c/ce/T--DUT_China--con_1.png" alt="">
-        </div>
-    </div>
-    <p class="caption">
-        Figure 1: Schematic diagram of this system [1] (The assembly of tri-enzyme units. E1, E2: enzymes;
-        green and blue
-        structure: RIDD dimer; black line: linker; pink structure: RIAD; one orange circle: cysteine; two orange
-        circles: disulfide bond)
-    </p>
-    <p>
-        To apply our hybrid system to other enzyme systems, we have established a modular design that uses our modules
-        based on an in-depth understanding of the mechanism of action. We will give several points for those who want to
-        use this RIDD-RIAD dimer or trimer peptides system for enzyme complexes. There are several necessary conditions
-        for using this molecular system:
-    </p>
-    <p>
-        1. The enzyme upstream of the production chain must be a rate-limiting enzyme.
-    </p>
-    <p>
-        2. Characterize and calculate the combination result of the product and the enzyme. If the product has an
-        inhibitory effect on the enzyme in the previous step, the enzyme system can play a more significant role.
-    </p>
-    <p>
-        3. Consider the influence of the sequence of enzymes on the activity, even though the impact of our backbone on
-        the movement of the enzyme has been minimized.
-    </p>
-    <p>
-        We hope our experience and tips can help them who are interested in modular enzyme assembly or complexes.
-    </p>
+</div>
+<section id="main-text">
     <article class="article">
-        <h1>Reference</h1>
-        <p>[1] Kang W, Ma T, Liu M, et al. Modular enzyme assembly for enhanced cascade biocatalysis and metabolic
-            flux[J]. <i>Nature Communications</i>, 2019, 10(1).
+        <h1>BBa_K2010999 (PETase)</h1>
+        <p>PETase是一种聚对苯二甲酸乙二醇酯降解酶，首次在<i>sakaiensis Ideonella</i>中发现。BBa_K2010999是针对PETase的大肠杆菌K12优化DNA序列的序列。<i>Is</i>PETase的催化活性可以用对硝基苯酚丁酸酯（pNPB）测定来表征，在该测定中，PETase裂解pNPB的酯键以释放对硝基苯酚酯。该化合物的吸光度可在405
+            nm处测量，以反映<i>Is</i>PETase活性。</p>
+        <h2>PETase定向进化</h2>
+        <p>从文献中获得的新信息，根据Son
+            HF等人的一项研究，利用角质酶和脂肪酶开发可生物降解塑料已成为一个重要的研究热点；然而，这些酶的PET降解能力较低，并且需要相当高的温度（约70℃）来进行其活性，因此受到限制。最近，一种新的细菌<i>Ideonella
+                sakaiensis</i>被分离出来，被证明能有效地将PET用作碳源。重要的是，<i>I. sakaiensis</i>的PETase（<i>Is</i>PETase）不仅显示出比迄今为止已知的任何其他能够降解PET的酶都高得多的降解活性，而且在中等温度下也起作用，表明其环境适用性。然而，用于PET降解的<i>Is</i>PETase活性仍然太低，无法解决当前的环境挑战。一些研究人员利用<i>Is</i>PETase的结构信息，进行了几项突变研究，试图提高<i>Is</i>PETase的活性，据报道，这些变体的酶活性略高于野生型<i>Is</i>PETase。尽管目前为止，在中等温度下测试的酶中，<i>Is</i>PETase表现出最强的PET降解活性，但其酶活性和稳定性仍然限制了其在塑料废物处理中的应用。此外，需要分泌PETase来实现其功能，这需要建立条件，以便在细胞外环境的严酷压力下维持其功能。然而，<i>Is</i>PETase的稳定性相对较低，因为<i>I.
+                sakaiensis</i>只在温和的条件下生长。因此，需要设计具有高稳定性的<i>Is</i>PETase变体，以便在中等温度下长时间保持酶活性。因此，根据已报道的<i>Is</i>PETase的晶体结构，他们开发了一种合理的蛋白质工程策略，以提高蛋白质的热稳定性，并成功获得了具有显著增强的热稳定性和高度改善的PET降解能力的<i>Is</i>PETase变体。这项工作有助于增加在温和条件下实现PET完全生物降解的可能性。
         </p>
+        <h2>BBa_K2010999 的改进</h2>
+        <p>与表达PETase的旧部件BBa_K2010999相比，我们设计了一个表达RIDD-PETase的新部件BBa_K3898152。本研究对PETase进行了优化，结果表明其具有较好的酶活性和较好的降解效果。</p>
+        <div class="figures">
+            <div class="row">
+                <img src="img/result/es22.png" alt="" class="col-12 col-md-8 mx-auto">
+            </div>
+        </div>
+        <p class="caption">图1 pNPB的酶活性分析。PD:RIDD-PETase酶溶液；MD:RIDD酶解液；空白：正常大肠杆菌BL21的破培养基。（30℃，pH=8.01000μM pNPB）</p>
+
+        <p>
+            根据这些结果，我们发现RIDD-PETase具有酯酶活性。在20分钟的反应后，每一个都在405nm处产生了高达3.4873的吸收峰。我们优化的RIDD-PETase酶活性比BBa_K2010999中的酶活性高1.5倍。</p>
+    </article>
+    <article class="article">
+        <h1>BBa_K3898001 (RIAD)</h1>
+        <p>RIAD是一对短肽标签中的一个，源于与RIDD二聚体特异结合的激酶锚定蛋白锚定域的两亲螺旋。RIAD和RIDD二聚体与RIAD肽之间的KD为1.2nM，具有很强的结合亲和力。RIDD
+            RIAD介导的组装已显示出在体外和活体内形成多酶复合物的潜力[1]。</p>
+    </article>
+    <article class="article">
+        <h1>BBa_K3898002 (hydrophobin4)</h1>
+        <p>2015年，Doris Ribitsch
+            ect证明，添加疏水蛋白可以提高PET水解速度，疏水蛋白是一种可以改变表面物理化学性质的小真菌蛋白[2]。这些富含半胱氨酸的小蛋白质完全来源于真菌，可以自然吸附到疏水表面以及疏水（空气、油和蜡）和亲水（水和细胞壁）相之间的界面[3]。疏水蛋白的作用机制尚不清楚，可能涉及形成更亲水的表面，水解酶与PET的结合和靶向，甚至直接调节其活性。在我们设计的系统中，疏水蛋白可能具有粘附PET聚合物和改变PET物理化学性质以改善降解的功能。</p>
+        <p>综上所述，我们可以利用疏水性蛋白质的疏水性，为更好的降解效率提供一个疏水环境。我们可以在PET降解系统中加入疏水蛋白，然后在底盘中一起表达。</p>
+    </article>
+    <article class="article">
+        <h1>BBa_K3898003 (改进PETase)</h1>
+        <p>聚对苯二甲酸乙二醇酯（PET）因其耐久性、价格低廉、加工方便而成为一种广受欢迎且应用广泛的塑料材料。然而，这同时导致严重的塑料污染和健康问题[4]。</p>
+        <p>2016年，吉田等人报告发现了一种名为<i>Ideonella sakaiensis 201-F622</i>的细菌[5]，该细菌开发了一种双酶系统，可在30℃下将PET塑料分解为对苯二甲酸酯（TPA）和乙二醇（EG）模块。产品可以有效分解为碳源和能量源，供细胞完全降解[6]。
+        </p>
+        <p>
+            值得注意的是，PETase被认为是一种潜在的塑料降解工具，因为它在30℃时降解PET的能力比之前报道的PET水解同系物更高[7]。然而，到目前为止，PETase酶的应用前景尚未实现。为了提高PETase降解聚酯塑料的活性，研究人员提供了不同的策略，例如通过合理的设计对蛋白质进行修饰。</p>
+        <p>在这里，我们利用了PETase酶变体<i>Is</i>PETase<sup>S121E/D186H/R280A</sup>。Rational蛋白质工程用于获得此变异体[8]。与原PETase相比，该变体具有更好的热稳定性、耐用性和更高的PET降解活性。
+        </p>
+    </article>
+    <article class="article">
+        <h1>BBa_K3898006 (MHETase)</h1>
+        <p>对苯二甲酸单羟乙基酯（MHET）水解酶（MHETase）是一种已知参与聚对苯二甲酸乙二醇酯（PET）最终降解步骤的酶，通过水解MHET生成对苯二甲酸和乙二醇[9]。</p>
+        <p>当发现<i>Ideonella sakaiensis</i>细菌能在环境温度下将PET分解为其组成部分时，PET降解取得了重大突破。两种重要的细菌酶参与PET降解过程。首先，<i>Ideonella
+            sakaiensis</i> PETase是一种结构良好的α/β-水解酶折叠酶，可将PET转化为对苯二甲酸单（2-羟乙基）酯（MHET）。然后，第二个关键酶MHETase将MHET水解为小模块[10]。</p>
+        <p>
+            MHETase有一个23kDa的结构域（Leu254–Gly468），它能紧密特异地结合MHET。蛋白折叠的核心保守的，尤其是负责水解反应的催化三元组[11]。和MHETase还利用其新颖的exo-PETase活性在PET的生物降解中发挥重要作用[12]。在PET解聚过程中，PETase和MHETase协同作用[13]。</p>
+    </article>
+    <article class="article">
+        <h1>BBa_K3898152 (RIDD-PETase)</h1>
+        <p>
+            RIDD-PETase由RIDD和PETase两部分组成。RIDD作为无骨架蛋白的一部分，通过与RIDD-MHETase和RIAD疏水蛋白的RIDD和RADD部分键合，形成PETase、MHETase和疏水蛋白的三酶复合物。PETase是一种聚对苯二甲酸乙二醇酯降解酶，在迄今报道的所有PET降解酶中，<i>I.
+            sakaiensis</i>的PETase在温和条件下具有最高的PET降解活性。我们通过正交试验获得了一个稳定的β6-β7连接环和延伸的亚位Ⅱc，<i>Is</i>PETase121E
+            D186H/R280Avariant（参考：<i>Ideonella
+            sakaiensis</i>的热稳定PETase的合理蛋白质工程，用于高效PET降解，）。与<i>Is</i>PETaseWT相比，其Tm值增加了8.81℃，在40℃时PET降解活性增加了14，显示出较高的热稳定性。PETase的分子量为32kD。
+        </p>
+        <p>因此，我们使用这种优化的酶来进行我们的工作，在酶活性领域取得了比BBa_K2010999更好的结果。</p>
+    </article>
+    <article class="article">
+        <h1>BBa_K3898163 (RIDD-MHETase)</h1>
+        <p>RIDD
+            MHETase由两部分组成，RIDD（BBa_K3898001）和MHETase（BBa_K3898006）。这是我们的PET降解三酶复合物的一部分。它的功能是使MHET升高，并产生TPA和EG。因此，MHET不会作为抑制剂进入PETase的活性口袋。</p>
+    </article>
+    <article class="article">
+        <h1>BBa_K3898165 (RIAD-hydrophobin4)</h1>
+        <p>
+            RIAD-hydrophobin4由两部分组成：RIAD（BBa_K3898000）和hydrophobin4（BBa_K3898002）。这是我们的PET降解三酶复合物的一部分。疏水蛋白4参与了我们设计的系统，可能具有粘附PET聚合物和改变PET物理化学性质以改善降解的功能。</p>
+    </article>
+    <article class="article">
+        <h1>三联蛋白复合物</h1>
+        <p>这一部分是由RIDD- PETase (BBa_K3898152)、RIDD-MHETase (BBa_K3898163)和RIAD -疏水蛋白4
+            (BBa_K3898165)组成的可降解PET三联蛋白复合物。我们通过几个实验来检测此蛋白复合物的性能。</p>
+        <h3>SDS-PAGE</h3>
+        <p>结果表明，三种细菌中都存在相应的靶蛋白。然而，由于其分子量较小(11 kDA)，在10%的分离凝胶上检测不到RIAD-疏水蛋白4。</p>
+        <div class="figures">
+            <div class="row">
+                <img src="img/result/es34.jpeg" alt="" class="col-12 col-md-10 mx-auto">
+            </div>
+        </div>
+        <p class="caption">图2 PETase-RIDD和MHETase-RIDD的SDS-PAGE表达结果
+            条带1:在大肠杆菌BL21培养基中，经重悬和离心处理，未诱导PETase表达，未发现预期条带;条带2:大肠杆菌BL21在离心后未诱导IPTG，其沉淀中未发现预期的条带;通道4:M:记号笔;条带3: <i>E.coli
+                BL21</i>培养基中，经细胞破坏和重悬后，有诱导RIDD-PETase表达的条带，但浓度较低;条带4:诱导表达<i>E.coli BL21</i>的RIDD-PETase在细胞破碎、重悬和离心后的沉淀中存在明显的相关带，表现为高浓度。条带5:在<i>E.coli
+                BL21</i>培养基中，通过细胞破坏和重悬诱导RIDD-MHETase表达，但浓度较低;条带6:诱导表达<i>E.coli BL21</i>的RIDD-MHETase在细胞破碎、重悬和离心后的沉淀中存在明显的相关带，表现为高浓度。
+        </p>
+
+        <h3>酶活性</h3>
+        <p>
+            如SDS-PAGE结果所示，细胞分裂后，RIAD-hydrophobin4、RIDD-PETase、RIDD-MHETase均主要存在于沉淀物中，而在裂解上清液中几乎未发现。众所周知，沉淀中的大多数蛋白质是包涵体形式的，不具有活性。通过直接观察很难判断细胞破裂后培养基中是否存在目标蛋白。因此，我们进行了蛋白质印迹分析。结果表明，培养基中仍含有少量的RIDD-PETase，这表明该培养基不需要等待复性实验的结果（<a
+                href="Protocol.html" target="_blank">复性实验</a>），而可以作为粗酶溶液来测定RIDD-PETase、RIDD-MHETase的酶活性。</p>
+        <p>由于降解PET塑料需要很长时间，无法单独有效、科学地测量MHETase的酶活性，因此我们参考了<a href="http://2016.igem.org/Team:Harvard_BioDesign"
+                                                             target="_blank">iGEM 2016 Harvard_BioDesign</a>团队的方法，设计了一套适合我们项目的方法（<a
+                href="Protocol.html" target="_blank">实验</a>）。酶的活性是用通用的酯酶底物pNPB测定的。在pNPB酯酶的作用下，可以生成对硝基苯酚，在405
+            nm处有一个强吸收峰。在一定时间内，pNPB与酶溶液的混合物在405 nm处的吸光度越高，对硝基苯酚的产率越高，酶的活性越高。</p>
+
+        <div class="figures">
+            <div class="row">
+                <img src="img/result/es22.png" alt="" class="col-12 col-md-8 mx-auto">
+            </div>
+        </div>
+        <p class="caption">图3 pNPB的酶活性分析。PD:RIDD-PETase酶溶液；MD:RIDD酶解液；空白：正常大肠杆菌BL21的破培养基。</p>
+
+        <p>根据结果（图3），我们发现RIDD-PETase和RIDD-MHETase都具有酯酶活性。在20分钟的反应后，在405 nm处产生的吸收峰分别高达3.4873和2.7654。</p>
+
+        <h3>PET塑料片降解试验</h3>
+        <p>我们从<a href="http://2021.igem.org/Team:TJUSLS_China" target="_blank">天津大学生命科学学院iGEM 2021团队</a>获得结晶度为12%的PET塑料片（仅作科学研究），并将其切割成5
+            mm*5 mm的碎片（每个碎片0.07 g）。我们将1.5 mL <i>E.coli</i> BL21、<i>E.coli
+                BL21/pET28a-PD</i>、<i>E.coli BL21/pET28a-M</i>、<i>E.coli BL21/pET28a-PD</i>-MD-hA细胞破碎物和上清液分别加入到几个EP管中，并每个分别添加三个5
+            mm*5 mm片段。然后，我们将反应混合物在37 °C下培养7天。7天后，通过紫外分光光度法检测降解产物对苯二甲酸（TPA），从而确定PET降解效率。</p>
+        <p>
+            在测量方面，我们选择使用紫外分光光度法来检测TPA的产量。PET与RIDD-PETase和RIDD-MHETase结合，最终产物为乙二醇（EG）和对苯二甲酸（TPA）。乙二醇是挥发性的，测试结果不可信，所以我们决定检测TPA。通过以往的文献研究，我们发现TPA有两种主流检测方法。一种是直接对样品进行紫外分光光度测定。反应混合物在紫外光谱区域（240
+            nm处）吸光度的增加表明可溶性TPA从不溶性PET基质中释放。二是采用反相高效液相色谱法，反相高效液相色谱系统由于其强大的分辨率和重现性，已被广泛用于分析PET酶解产物。PET水解酶（即TPA、MHET和BHET）产生的不同化合物可在C18反相HPLC柱上有效分离：将反应混合物上样到极性流动相与有机溶剂（乙腈）浓度平衡的柱中。</p>
+        <p>考虑到我们的实验周期、产量和实验室条件，我们选择紫外分光光度法来检测TPA。然后我们在OD240处绘制了TPA的标准曲线（图4）。</p>
+        <p>对上述八个样品孵育后得到的液体进行TPA含量测定，并减去空白吸收。获得的数据如图5所示。</p>
+        <p>从TPA产物的浓度可以看出，PD-MD-hA培养基中的TPA浓度高于PD培养基或MD培养基中的TPA浓度。这有力地支持了我们三酶复合物构建的工程成功。</p>
+        <div class="figures">
+            <div class="row">
+                <img src="img/result/es36.jpeg" alt="" class="col-12 col-md-8 mx-auto">
+            </div>
+        </div>
+        <p class="caption text-md-center">图4 OD240时TPA的标准曲线</p>
+
+        <div class="figures">
+            <div class="row">
+                <img src="img/result/es37.jpeg" alt="" class="col-12 col-md-8 mx-auto">
+            </div>
+        </div>
+        <p class="caption text-md-center">图5 每个实验组的TPA产品浓度</p>
+
+        <h3>扫描电子显微镜</h3>
+        <p>为了进一步确认我们构建的三种酶复合物的活性，我们还选择了<i>E.coli</i> BL21, <i>E.coli BL21/pET28a-PD</i>, <i>E.coli BL21/pET28a-M,</i>
+            <i>E.coli
+                BL21/pET28a-PD</i>-MD-hA培养基中的PET塑料片进行扫描电镜检查。结果与预期一致。用<i>E.coli</i>
+            BL21培养基或MD培养基处理过的塑料板几乎没有划痕或孔洞。PD处理后的塑料片有一些明显的划痕，而PD-MD-hA处理后的塑料片表面完全覆盖着划痕，同时，密集地填充着各种形状的孔。扫描电子显微镜进一步证明，我们构建的三酶复合物具有比单酶降解更好的PET塑料降解活性。
+        </p>
+        <div class="figures">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <img src="img/result/es38.jpeg" alt="">
+                    <p>(a)</p>
+                </div>
+                <div class="col-12 col-md-6">
+                    <img src="img/result/es39.jpeg" alt="">
+                    <p>(b)</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <img src="img/result/es310.jpeg" alt="">
+                    <p>(c)</p>
+                </div>
+                <div class="col-12 col-md-6">
+                    <img src="img/result/es311.jpeg" alt="">
+                    <p>(d)</p>
+                </div>
+            </div>
+        </div>
+
+        <p class="caption">图6 扫描电子显微镜 （a）：在<i>E.coli</i> BL21中处理的PET塑料片。（b）：在<i>E.coli BL21/pET28a-M </i>中处理的PET塑料片。（c）：在<i>E.coli
+            BL21/pET28a-PD</i>中处理的PET塑料片。（d）：在<i>E.coli BL21/pET28a-PD-MD-hA</i>培养基中处理的PET塑料片。
+        </p>
+        <p>简而言之，我们按照预期成功构建了三种酶复合物，测量了复合物的酶活性，并进行了扫描电子显微镜和TPA检测实验。定性和定量地评价了三种酶复合物对PET塑料的降解效果。</p>
+        <p>
+            通过扫描电子显微镜的定性测试，我们项目中创建的酶复合物在PET塑料板上的效果优于单独使用PETase。单独使用PETase只会在塑料板表面造成划痕。然而，我们的酶复合物已经超过了PETase的活性，造成了更严重的划痕，最重要的是，产生了许多深孔。扫描电子显微镜的结果也间接解释了疏水蛋白4在酶复合物中的作用。在疏水蛋白4的存在下，酶复合物可以结合到PET塑料片的表面。因此，这种酶不是分散在水中，通过随机碰撞引发反应，而是更有可能深入表面。</p>
+        <p>通过TPA产量检测的定量测试，我们发现我们的酶复合物的降解效果优于单独使用的PETase，降解效率提高了两倍。</p>
+        <p>总的来说，我们成功构建了一个三酶复合物，并通过分析降解效果和产物产量来确认其活性。这将为后续的酶复合物高效降解PET塑料和PET塑料生物回收产业化带来希望。</p>
+
+    </article>
+    <article class="article">
+        <h1>参考文献</h1>
+        <p>[1] Kang, W. et al. Modular enzyme assembly for enhanced cascade biocatalysis and metabolic flux. Nature
+            Communications 10, 4248 (2019).</p>
+        <p>[2] Ribitsch Doris et al. Enhanced Cutinase-Catalyzed Hydrolysis of Polyethylene Terephthalate by Covalent
+            Fusion to Hydrophobins. Applied and Environmental Microbiology 81, 3586–3592 (2015).</p>
+        <p>[3] Linder MB et al. Hydrophobins: the protein amphiphiles of filamentous fungi. FEMS Microbiol Rev
+            29,877-896 (2005)</p>
+        <p>[4] Sinha, V., Patel, M. R. & Patel, J. V. Pet Waste Management by Chemical Recycling: A Review. Journal of
+            Polymers and the Environment 18, 8–25 (2010).</p>
+        <p>[5] Yoshida S, Hiraga K, Takehana T, et al. A bacterium that degrades and assimilates poly(ethylene
+            terephthalate).[J]. Science 351，1196-1199. (2016)</p>
+        <p>[6] Chen, C.-C., Han, X., Ko, T.-P., Liu, W. & Guo, R.-T. Structural studies reveal the molecular mechanism
+            of PETase. The FEBS Journal 285, 3717–3723 (2018).</p>
+        <p>[7] Ma, Y. et al. Enhanced Poly(ethylene terephthalate) Hydrolase Activity by Protein Engineering.
+            Engineering 4, 888–893 (2018).</p>
+        <p>[8] Son, H. F. et al. Rational Protein Engineering of Thermo-Stable PETase from <i>Ideonella sakaiensis</i>
+            for
+            Highly Efficient PET Degradation. ACS Catal. 9, 3519–3526 (2019).</p>
+        <p>[9] Hachisuka Shin-ichi, Nishii Tarou, Yoshida Shosuke, & Cann Isaac. Development of a Targeted Gene
+            Disruption System in the Poly(Ethylene Terephthalate)-Degrading Bacterium <i>Ideonella sakaiensis</i> and
+            Its
+            Applications to PETase and MHETase Genes. Applied and Environmental Microbiology 87, e00020-21.</p>
+        <p>[10] Palm, G.J., Reisky, L., Böttcher, D. et al. Structure of the plastic-degrading <i>Ideonella
+            sakaiensis</i>
+            MHETase bound to a substrate. Nat Commun 10, 1717 (2019)</p>
+        <p>[11] Graf, L. G. et al. Chapter Sixteen - Structural analysis of PET-degrading enzymes PETase and MHETase
+            from <i>Ideonella sakaiensis</i>. in Methods in Enzymology (eds. Weber, G., Bornscheuer, U. T. & Wei, R.)
+            vol. 648
+            337–356 (Academic Press, 2021).</p>
+        <p>[12] Sagong, H.-Y. et al. Decomposition of the PET Film by MHETase Using Exo-PETase Function. ACS Catal. 10,
+            4805–4812 (2020).</p>
+        <p>[13] Knott, B. C. et al. Characterization and engineering of a two-enzyme system for plastics
+            depolymerization. Proc Natl Acad Sci USA 117, 25476–25485 (2020).</p>
+
     </article>
 </section>
 <div id="footer-point"></div>

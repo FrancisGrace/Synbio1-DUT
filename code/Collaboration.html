@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>合作与调研 - DUT</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
     <script src="js/jquery.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <script src="js/bootstrap.min.js"></script>
     <script src="js/vue.min.js"></script>
-    <link rel="stylesheet" href="css/general.css">
+    <link href="css/general.css" rel="stylesheet">
     <script src="js/general.js"></script>
-    <link rel="stylesheet" href="css/sidebar.css">
-    <link rel="stylesheet" href="css/article.css">
-    <script src="js/sidebar.js" defer></script>
+    <link href="css/sidebar.css" rel="stylesheet">
+    <link href="css/article.css" rel="stylesheet">
+    <script defer src="js/sidebar.js"></script>
 </head>
 <body>
-<nav id="nav-bar" class="navbar navbar-expand-lg navbar-light sticky-top"></nav>
-<div id="title" class="col-12" style='-o-background-image: url("img/title/collaborations.jpg");
+<nav class="navbar navbar-expand-lg navbar-light sticky-top" id="nav-bar"></nav>
+<div class="col-12" id="title" style='-o-background-image: url("img/title/collaborations.jpg");
     -moz-background-image: url("img/title/collaborations.jpg");
     -webkit-background-image: url("img/title/collaborations.jpg");
     background-image: url("img/title/collaborations.jpg");'>
@@ -26,7 +26,7 @@
     <table>
         <tr v-for="(value,key,index) in articles">
             <td>
-                <canvas width="40" height="40" class="canvas"></canvas>
+                <canvas class="canvas" height="40" width="40"></canvas>
             </td>
             <td class="side-item" v-bind:class="{'side-item-active':itemActive[key]}">
                 <a v-bind:href="'#article'+(key+1)">
@@ -37,300 +37,422 @@
     </table>
 </div>
 <section id="main-text">
-    <p>During this season, we have developed friendly exchanges and cooperation with many teams and organizations.
-        Including OUC-China, Tianjin, CPU_China, TJUSLS_China, Tongji_China, SCAU-China and other teams, as well as
-        participating in Plasticase, ICII, CCiC, New Pollutants Alliance and other organizations or conferences. During
-        these exchange and cooperation processes, we have learned a lot in the academic and industrial fields, and the
-        ability to communicate and get along with other people has also been improved.</p>
     <article class="article">
-        <h1>OUC-China<a href="https://2021.igem.org/Team:OUC-China/Collaborations" target="_blank">
-            <svg class="icon" style="width: 1em;height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
-                 viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1714">
-                <path d="M607.934444 417.856853c-6.179746-6.1777-12.766768-11.746532-19.554358-16.910135l-0.01228 0.011256c-6.986111-6.719028-16.47216-10.857279-26.930349-10.857279-21.464871 0-38.864146 17.400299-38.864146 38.864146 0 9.497305 3.411703 18.196431 9.071609 24.947182l-0.001023 0c0.001023 0.001023 0.00307 0.00307 0.005117 0.004093 2.718925 3.242857 5.953595 6.03853 9.585309 8.251941 3.664459 3.021823 7.261381 5.997598 10.624988 9.361205l3.203972 3.204995c40.279379 40.229237 28.254507 109.539812-12.024871 149.820214L371.157763 796.383956c-40.278355 40.229237-105.761766 40.229237-146.042167 0l-3.229554-3.231601c-40.281425-40.278355-40.281425-105.809861 0-145.991002l75.93546-75.909877c9.742898-7.733125 15.997346-19.668968 15.997346-33.072233 0-23.312962-18.898419-42.211381-42.211381-42.211381-8.797363 0-16.963347 2.693342-23.725354 7.297197-0.021489-0.045025-0.044002-0.088004-0.066515-0.134053l-0.809435 0.757247c-2.989077 2.148943-5.691629 4.669346-8.025791 7.510044l-78.913281 73.841775c-74.178443 74.229608-74.178443 195.632609 0 269.758863l3.203972 3.202948c74.178443 74.127278 195.529255 74.127278 269.707698 0l171.829484-171.880649c74.076112-74.17435 80.357166-191.184297 6.282077-265.311575L607.934444 417.856853zM855.61957 165.804257l-3.203972-3.203972c-74.17742-74.178443-195.528232-74.178443-269.706675 0L410.87944 334.479911c-74.178443 74.178443-78.263481 181.296089-4.085038 255.522628l3.152806 3.104711c3.368724 3.367701 6.865361 6.54302 10.434653 9.588379 2.583848 2.885723 5.618974 5.355985 8.992815 7.309476 0.025583 0.020466 0.052189 0.041956 0.077771 0.062422l0.011256-0.010233c5.377474 3.092431 11.608386 4.870938 18.257829 4.870938 20.263509 0 36.68962-16.428158 36.68962-36.68962 0-5.719258-1.309832-11.132548-3.645017-15.95846l0 0c-4.850471-10.891048-13.930267-17.521049-20.210297-23.802102l-3.15383-3.102664c-40.278355-40.278355-24.982998-98.79612 15.295358-139.074476l171.930791-171.830507c40.179095-40.280402 105.685018-40.280402 145.965419 0l3.206018 3.152806c40.279379 40.281425 40.279379 105.838513 0 146.06775l-75.686796 75.737962c-10.296507 7.628748-16.97358 19.865443-16.97358 33.662681 0 23.12365 18.745946 41.87062 41.87062 41.87062 8.048303 0 15.563464-2.275833 21.944801-6.211469 0.048095 0.081864 0.093121 0.157589 0.141216 0.240477l1.173732-1.083681c3.616364-2.421142 6.828522-5.393847 9.529027-8.792247l79.766718-73.603345C929.798013 361.334535 929.798013 239.981676 855.61957 165.804257z"
-                      p-id="1715"></path>
-            </svg>
-        </a></h1>
-        <p>Throughout the season, we collaborated with OUC-China on several issues. We responded to the theme of World
-            Environment Day 2021: Ecosystem Restoration. With the opportunity of the competition, we co-authored a
-            popular
-            science article with the OUC-China team to popularize microplastics and antibiotics, to educate people about
-            the
-            concepts and dangers of antibiotics and microplastics as new pollutants, and to call on the public to
-            contribute
-            to world environmental protection.</p>
-        <div class="row">
-            <img src="https://2021.igem.org/wiki/images/2/2c/T--DUT_China--coll-11.png" alt=""
-                 class="col-12 col-md-6 mx-auto">
-        </div>
+        <h1>一、项目启发性</h1>
+        <p>
+            我们的项目在完成实验的同时，也对未来的生物研究做出贡献，主要分为以下两个方面。一方面，它补充了现有的零件，补充零件如下表所示;另一方面，构建的RIDD和RIAD复合物，为未来其他团队构建酶复合物提供了新的思路，并结合我们的文献研究和实践经验给出了一些建议。</p>
+        <table>
 
-        <p>After the popular science article was published, we received widespread attention and discussion, and the
-            public's
-            understanding of new pollutants has just begun. Inspired by this, we also tried to increase the science
-            education
-            of new pollutants, so that the society can have a more sustainable and extensive knowledge about new
-            pollutants.
-            Based on this, we joined OUC-China, Nanjing_NFLS, HiZJU, and SJTU-BioX-Shanghai to form the New
-            Pollutants
-            Alliance and held an online workshop on New Pollutants on September 25, 2021. Our team's project is on
-            plastic
-            degradation, which also includes the degradation of microplastics in new environmental pollutants. The
-            ultimate
-            goal of our team is to degrade environmental pollutants as well as OUC-China and other teams. In addition,
-            we
-            learned about contaminants other than microplastics - persistent organic pollutants, antibiotics, and the
-            need
-            for pollution control. New contaminants may enter the environment and cause known or potential negative
-            ecological or health effects. These substances may become the subject of regulatory management in the
-            future.
-            These compounds have attracted a lot of attention from the community and are a hot spot for scientific
-            research.
-            In particular, we invited teachers in the field of synthetic biology and ecotoxicology, companies in the
-            field
-            of rapid testing and students with legal background to share and discuss. At the conference, we also learned
-            about the laws and testing standards related to the environment, which will help our project go to the
-            market
-            better.</p>
-        <p>We hope our team can collaborate with other iGEM teams to contribute to the improvement of pollutant
-            management
-            and environmental issues. We also hope to gather our strengths and explore new pollutant solutions from
-            multiple dimensions to build a better world together!</p>
-        <div class="row">
-            <img src="https://2021.igem.org/wiki/images/3/3f/T--DUT_China--coll-12.png" alt=""
-                 class="col-12 col-md-6 mx-auto">
-        </div>
-        <div class="row">
-            <img src="https://2021.igem.org/wiki/images/f/f8/T--DUT_China--coll-13.png" alt=""
-                 class="col-12 col-md-8 mx-auto">
-        </div>
-        <p>Click <a href="http://2021.igem.org/Team:OUC-China/Collaborations" target="_blank">here</a> to visit their
-            wiki.</p>
+            <tr>
+                <th >零件编号</th>
+                <th >补充摘要</th>
+            </tr>
+            <tr>
+                <td><b>BBa_K2010000</b></td>
+                <td>一种酶的定向进化，该酶可有效降解PET塑料，我们使用该酶来构建酶复合物</td>
+            </tr>
+            <tr>
+                <td><b>BBa_K2013003</b></td>
+                <td>Ailurus vecTM从实验室实验中收集的新数据以及MHETase和PETase融合表达的文献内容。</td>
+            </tr>
+        </table>
+        <p>已有研究证实在RIAD-RIDD二聚体肽间具有相互作用， 这两种类型的肽彼此具有很强的结合亲和力。受这一发现的启发，我们提出了 IsPETase 和 MHETase
+            可以分别与RIDD和RIAD结合的想法，以便与这两种酶的活性位点进行更密切的物理接触，可以显著加速PET降解。
+            我们在不干扰酶活性位点的结构或酶活性的条件下，进一步加快了酶的降解速度。实验的最终结果也证实了我们的想法。</p>
+        <p>通过实验，我们深入了解了每个关键组分之间的作用机制，并计算了中间产物对酶的影响，从而我们可以更好地解释我们的系统。
+            为了将我们的复合系统应用于其他酶系统，我们建立了一个模块化设计。使用这种分子系统有几个必要的条件：</p>
+        <p>1.产品链上游的酶必须是限速酶。</p>
+        <p>2.表征和计算产品和酶结合的效果。如果产品在前一步中对酶有抑制作用，酶系统可以发挥更大的作用。</p>
+        <p>3.即使我们的蛋白质骨架对酶活性的影响已经最小，仍需要考虑酶序列对活性的影响。</p>
+
+        <!--        <div class="row">-->
+        <!--            <img alt="" class="col-12 col-md-6 mx-auto"-->
+        <!--                 src="https://2021.igem.org/wiki/images/3/3f/T&#45;&#45;DUT_China&#45;&#45;coll-12.png">-->
+        <!--        </div>-->
+        <!--        <div class="row">-->
+        <!--            <img alt="" class="col-12 col-md-8 mx-auto"-->
+        <!--                 src="https://2021.igem.org/wiki/images/f/f8/T&#45;&#45;DUT_China&#45;&#45;coll-13.png">-->
+        <!--        </div>-->
+        <!--        <p>Click <a href="http://2021.igem.org/Team:OUC-China/Collaborations" target="_blank">here</a> to visit their-->
+        <!--            wiki.</p>-->
     </article>
     <article class="article">
-        <h1>Tianjin<a href="https://2021.igem.org/Team:Tianjin/Collaborations" target="_blank">
-            <svg class="icon" style="width: 1em;height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
-                 viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1714">
-                <path d="M607.934444 417.856853c-6.179746-6.1777-12.766768-11.746532-19.554358-16.910135l-0.01228 0.011256c-6.986111-6.719028-16.47216-10.857279-26.930349-10.857279-21.464871 0-38.864146 17.400299-38.864146 38.864146 0 9.497305 3.411703 18.196431 9.071609 24.947182l-0.001023 0c0.001023 0.001023 0.00307 0.00307 0.005117 0.004093 2.718925 3.242857 5.953595 6.03853 9.585309 8.251941 3.664459 3.021823 7.261381 5.997598 10.624988 9.361205l3.203972 3.204995c40.279379 40.229237 28.254507 109.539812-12.024871 149.820214L371.157763 796.383956c-40.278355 40.229237-105.761766 40.229237-146.042167 0l-3.229554-3.231601c-40.281425-40.278355-40.281425-105.809861 0-145.991002l75.93546-75.909877c9.742898-7.733125 15.997346-19.668968 15.997346-33.072233 0-23.312962-18.898419-42.211381-42.211381-42.211381-8.797363 0-16.963347 2.693342-23.725354 7.297197-0.021489-0.045025-0.044002-0.088004-0.066515-0.134053l-0.809435 0.757247c-2.989077 2.148943-5.691629 4.669346-8.025791 7.510044l-78.913281 73.841775c-74.178443 74.229608-74.178443 195.632609 0 269.758863l3.203972 3.202948c74.178443 74.127278 195.529255 74.127278 269.707698 0l171.829484-171.880649c74.076112-74.17435 80.357166-191.184297 6.282077-265.311575L607.934444 417.856853zM855.61957 165.804257l-3.203972-3.203972c-74.17742-74.178443-195.528232-74.178443-269.706675 0L410.87944 334.479911c-74.178443 74.178443-78.263481 181.296089-4.085038 255.522628l3.152806 3.104711c3.368724 3.367701 6.865361 6.54302 10.434653 9.588379 2.583848 2.885723 5.618974 5.355985 8.992815 7.309476 0.025583 0.020466 0.052189 0.041956 0.077771 0.062422l0.011256-0.010233c5.377474 3.092431 11.608386 4.870938 18.257829 4.870938 20.263509 0 36.68962-16.428158 36.68962-36.68962 0-5.719258-1.309832-11.132548-3.645017-15.95846l0 0c-4.850471-10.891048-13.930267-17.521049-20.210297-23.802102l-3.15383-3.102664c-40.278355-40.278355-24.982998-98.79612 15.295358-139.074476l171.930791-171.830507c40.179095-40.280402 105.685018-40.280402 145.965419 0l3.206018 3.152806c40.279379 40.281425 40.279379 105.838513 0 146.06775l-75.686796 75.737962c-10.296507 7.628748-16.97358 19.865443-16.97358 33.662681 0 23.12365 18.745946 41.87062 41.87062 41.87062 8.048303 0 15.563464-2.275833 21.944801-6.211469 0.048095 0.081864 0.093121 0.157589 0.141216 0.240477l1.173732-1.083681c3.616364-2.421142 6.828522-5.393847 9.529027-8.792247l79.766718-73.603345C929.798013 361.334535 929.798013 239.981676 855.61957 165.804257z"
-                      p-id="1715"></path>
-            </svg>
-        </a></h1>
-        <p>We began to contact with Tianjin at the Conference of China iGEMer Community(CCIC) conference, and our two
-            teams
-            had friendly exchanges, which also laid the foundation for the long-term cooperation. With the enhancement
-            of communication, we found that both teams have highlights in the experimental design. It is undeniable that
-            they
-            are more experienced in this regard. However, we can help them in modeling and wiki construction. Therefore,
-            the
-            cooperation between the two teams has helped promote the work of their respective teams.</p>
-        <div class="row">
-            <img src="https://2021.igem.org/wiki/images/2/20/T--DUT_China--coll-14.png" alt=""
-                 class="col-12 col-md-8 mx-auto">
+        <h1>二、队伍合作——TJUSLS_CHINA</h1>
+        <h2>2.1我们是怎么认识的？</h2>
+        <p>
+            今年4月，在与教师和专业机构进行了文献研究和实际社会研究的交流与讨论后，我们决定今年项目的主题是PET塑料的降解。经成员交流后，我们得知天津大学也选择了PET塑料的降解作为研究方向。天津大学的生物专业水平是全国最好的，我们之间的交流与合作可以同时促进双方项目的进展。因此，我们双方开启了长期的合作与交流。</p>
+        <h2>2.2为什么我们决定进行这种合作？</h2>
+        <p>在与他们的讨论中，我们发现我们项目之间的共同目标是降解PET塑料</p>
+        <p>
+            此外，我们两个团队也有各自的优势。我们学校有优秀的合成生物学教师。我们可以帮助他们与老师取得联系，并为他们提供质粒优化实验。作为一个成熟的iGEM团队，TJUSLS_China在合成生物方面可以指导我们，并为我们提供经验和必要的材料。</p>
+        <p>DUT_China和TJUSLS_China从4月份开始就建立了合作伙伴关系并达成共识，随后进行了一系列线上交流。我们的合作伙伴关系不仅限于项目过程的交流;我们还为彼此提供了很多的支持，并促进了彼此项目的成功。</p>
+        <p>
+            TJUSLS_China和DUT_China都是Plasticase的成员。Plasticase是一个致力于解决塑料污染问题的社区。在以"重塑未来"为主题的虚拟会议上，我们互相介绍了各自的项目。对方向我们的成功表示了祝贺。同时，我们也向TJUSLS_China送上了祝福，希望他们能得到好的实验结果。</p>
+        <h2>2.3我们为TJUSLS_China做了什么？</h2>
+        <p>3月：通过QQ、电子邮件等方式，我们与TJUSLS_China在可降解PET塑料研究中进行了交流合作，并介绍我方老师给予对方指导。</p>
+        <p>4月：通过在线交流不断改进项目理念和流程。</p>
+        <div class="figures">
+            <div class="row">
+                <img src="img/collaboration/21.png" alt=""
+                     class="col-12 col-md-8 mx-auto">
+            </div>
         </div>
-        <p>During the experiment, we encountered a challenge in using SE seamlessly to connect three DNA fragments.
-            Faced
-            with this result, we thought it over and over again and finally decided to seek help from the Tianjin which
-            have
-            a good command of the two methods: DNA assembler and CPEC assembly. After practical communication, we have a
-            broader understanding of plasmid assembly. Finally, they used the method of CPEC assembly to help us clone
-            and
-            sequence the plasmid successfully.</p>
-        <p>Some members in team Tianjin encountered some problems when uploading their source code to the iGEM server.
-            After
-            submitting the code, the layout of some pages was different from what they expected. A member who is
-            responsible
-            for wiki construction in our team provided them some guidelines and helped them fixed out with his
-            skills.</p>
-        <div class="row">
-            <img src="https://2021.igem.org/wiki/images/c/ce/T--DUT_China--coll-15.png" alt=""
-                 class="col-12 ">
+        <div class="figures">
+            <div class="row">
+                <img src="img/collaboration/22.png" alt=""
+                     class="col-12 col-md-8 mx-auto">
+            </div>
         </div>
-        <p>Click <a href="http://2021.igem.org/Team:Tianjin/Collaborations" target="_blank">here</a> to visit their
-            wiki.</p>
+        <p>5月：组长带领我们前往天津大学，就双方项目进行线下交流和讨论。交流过程中，我们明确了两个项目的合作要点，提出了TJUSLS_China项目的初步问题和改进方法。</p>
+        <div class="figures">
+            <div class="row">
+                <img src="img/collaboration/23.png" alt=""
+                     class="col-12 col-md-8 mx-auto">
+            </div>
+        </div>
+        <div class="figures">
+            <div class="row">
+                <img src="img/collaboration/24.png" alt=""
+                     class="col-12 col-md-8 mx-auto">
+            </div>
+        </div>
+        <p>参观交流结束后，我们参观了他们的学校和天津大学周围的风景。在这次访问中，我们不仅获得了丰厚的知识，而且加深了彼此的友谊。</p>
+        <div class="figures">
+            <div class="row">
+                <img src="img/collaboration/25.png" alt=""
+                     class="col-12 col-md-8 mx-auto">
+            </div>
+        </div>
+        <div class="figures">
+            <div class="row">
+                <img src="img/collaboration/26.png" alt=""
+                     class="col-12 col-md-8 mx-auto">
+            </div>
+        </div>
+        <p>6月：邀请TJUSLS_China一起走访线下企业，就当前项目进展交换意见。</p>
+        <p>7月：我们将连有编码MHET基因的质粒送到TJUSLS_China进行进一步研究。</p>
+        <p>
+            8月：经过网上讨论，双方就项目进展情况和出现的问题进行了交流。在帮助他们改进后，完成了商业提案和立法提案的撰写工作。此外，我们还通过线上讨论交流了项目的进展和双方的问题，并在帮助它们改进后完成了商业建议书和立法建议书的撰写。</p>
+        <p>9月：在Plasticase"重塑未来"的虚拟会议上，双方都介绍了他们的项目。另一方祝贺我们的成功。同时，我们也向TJUSLS_China送上祝福，希望他们能得到好的实验结果。</p>
+        <div class="figures">
+            <div class="row">
+                <img src="img/collaboration/27.png" alt=""
+                     class="col-12 col-md-8 mx-auto">
+            </div>
+        </div>
+        <div class="figures">
+            <div class="row">
+                <img src="img/collaboration/28.png" alt=""
+                     class="col-12 col-md-8 mx-auto">
+            </div>
+        </div>
+        <p>10月：我们分享了Ailurus vecTM提供的优化启动子和终止子的计算结果，以达到提高表达水平的最佳序列，并与TJUSLS_China进行了积极的交流互动。</p>
+        <h2>2.4我们得到的TJUSLS_China的帮助</h2>
+        <p>3月：通过QQ、电子邮件等方式，TJUSLS_China与DUT_China在可降解PET塑料方向上交流合作，并为我们提供帮助。</p>
+        <p>四月：通过在线交流不断改进项目创意和流程。</p>
+        <p>5月：我们被邀请到天津大学进行线下交流和讨论，在交流中，我们得到启发，可以使用经过骨架设计的PETase来进行实验</p>
+        <p>6月：访问了DUT_China线下公司。</p>
+        <p>7月：PET塑料邮寄给DUT_China。</p>
+        <p>8月：继续在线交流，为项目中存在的问题提供帮助。同时，经过TJUSLS_China对PETase的定向进化，我们获得了高效的PETase。</p>
+        <p>9月：我们到国内环保处理企业进行访谈调研和项目交流。</p>
+        <p>10月：在wiki建设期间分享建议和经验。</p>
+
+
     </article>
+
     <article class="article">
-        <h1>NEU_China<a href="http://2021.igem.org/Team:NEU_CHINA/Collaborations" target="_blank">
-            <svg class="icon" style="width: 1em;height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
-                 viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1714">
-                <path d="M607.934444 417.856853c-6.179746-6.1777-12.766768-11.746532-19.554358-16.910135l-0.01228 0.011256c-6.986111-6.719028-16.47216-10.857279-26.930349-10.857279-21.464871 0-38.864146 17.400299-38.864146 38.864146 0 9.497305 3.411703 18.196431 9.071609 24.947182l-0.001023 0c0.001023 0.001023 0.00307 0.00307 0.005117 0.004093 2.718925 3.242857 5.953595 6.03853 9.585309 8.251941 3.664459 3.021823 7.261381 5.997598 10.624988 9.361205l3.203972 3.204995c40.279379 40.229237 28.254507 109.539812-12.024871 149.820214L371.157763 796.383956c-40.278355 40.229237-105.761766 40.229237-146.042167 0l-3.229554-3.231601c-40.281425-40.278355-40.281425-105.809861 0-145.991002l75.93546-75.909877c9.742898-7.733125 15.997346-19.668968 15.997346-33.072233 0-23.312962-18.898419-42.211381-42.211381-42.211381-8.797363 0-16.963347 2.693342-23.725354 7.297197-0.021489-0.045025-0.044002-0.088004-0.066515-0.134053l-0.809435 0.757247c-2.989077 2.148943-5.691629 4.669346-8.025791 7.510044l-78.913281 73.841775c-74.178443 74.229608-74.178443 195.632609 0 269.758863l3.203972 3.202948c74.178443 74.127278 195.529255 74.127278 269.707698 0l171.829484-171.880649c74.076112-74.17435 80.357166-191.184297 6.282077-265.311575L607.934444 417.856853zM855.61957 165.804257l-3.203972-3.203972c-74.17742-74.178443-195.528232-74.178443-269.706675 0L410.87944 334.479911c-74.178443 74.178443-78.263481 181.296089-4.085038 255.522628l3.152806 3.104711c3.368724 3.367701 6.865361 6.54302 10.434653 9.588379 2.583848 2.885723 5.618974 5.355985 8.992815 7.309476 0.025583 0.020466 0.052189 0.041956 0.077771 0.062422l0.011256-0.010233c5.377474 3.092431 11.608386 4.870938 18.257829 4.870938 20.263509 0 36.68962-16.428158 36.68962-36.68962 0-5.719258-1.309832-11.132548-3.645017-15.95846l0 0c-4.850471-10.891048-13.930267-17.521049-20.210297-23.802102l-3.15383-3.102664c-40.278355-40.278355-24.982998-98.79612 15.295358-139.074476l171.930791-171.830507c40.179095-40.280402 105.685018-40.280402 145.965419 0l3.206018 3.152806c40.279379 40.281425 40.279379 105.838513 0 146.06775l-75.686796 75.737962c-10.296507 7.628748-16.97358 19.865443-16.97358 33.662681 0 23.12365 18.745946 41.87062 41.87062 41.87062 8.048303 0 15.563464-2.275833 21.944801-6.211469 0.048095 0.081864 0.093121 0.157589 0.141216 0.240477l1.173732-1.083681c3.616364-2.421142 6.828522-5.393847 9.529027-8.792247l79.766718-73.603345C929.798013 361.334535 929.798013 239.981676 855.61957 165.804257z"
-                      p-id="1715"></path>
-            </svg>
-        </a></h1>
-        <p>This year, we cooperated with NEU_China in the model section. One of our members explained to NEU_China the
-            problem of Matlab modeling with an example, and exchanged previous iGEM modeling experience. In addition, we
-            also discussed the considerations of related genes in bacterial quorum sensing. After communicating with
-            each other, we have all gained a lot.
+        <h1>三、专家访谈</h1>
+        <h2>第一阶段</h2>
+        <p>
+            我们就现阶段的中国塑料降解情况，采访了许多相关人士，以便更好地了解PET积累的情况及PET对经济，社会和环境产生的影响，其中包括PET污染，以及现阶段塑料降解面临的问题和挑战。通过这种方式，我们可以从多个角度理解我们的项目，并思考我们的项目如何更好地影响社会。</p>
+        <h3>名称：金土地集团
+        </h3>
+        <div class="figures">
+            <div class="row">
+                <img src="img/collaboration/31.png" alt=""
+                     class="col-12 col-md-8 mx-auto">
+            </div>
+        </div>
+        <p>
+            金土地集团是一家致力于农用薄膜、塑料制品、塑料板材、管材及废旧塑料回收加工产品的著名公司，是中国西北地区最大的农业塑料公司。我们有幸与本公司总经理孙女士和她的学生刘琦就当前与塑料相关的行业形势以及相应的国家管理法律进行了沟通。公司负责人告诉我们，塑料的种类主要是PE和PET材料，目前金土地集团发明的PE材料塑料降解方法已相对成熟。然而，PET回收率只有10%左右。PET常见的回收技术涉及高温高压、强酸强碱等问题，很可能造成进一步的污染。据金土地集团市场调查，PET在农田中以及温和温度下的降解仍然是一个很大的挑战。农用塑料不能有效回收并埋在农田中，会造成严重的土壤肥力损害。土壤污染使得作物种植不理想，成本损失巨大。虽然政府已经制定了相应的法律，限制塑料在相关领域的使用和传播，但效果仍然不明显。在温和温度下，PET的降解仍然需要改进。</p>
+        <p><b>收获：</b>确保PET在温和温度下的降解迫在眉睫，且具有意义，也是我们的项目应该重点致力于解决问题。解决当前塑料污染挑战的关键点在于温和的温度降解、有效的降解率和良好的长期使用和降解性能，这将是我们的项目设计核心。虽然我国已经出台了相关严格的塑料污染治理政策，但现行的PET管理法仍处于起步阶段，尚未完善。因此，需要新的方法在温和条件下加速PET塑料，并且需要更全面和成熟的立法提案。
         </p>
-        <div class="row">
-            <img src="https://2021.igem.org/wiki/images/c/c3/T--DUT_China--neu01.png" alt=""
-                 class="col-12  col-md-8 mx-auto"></div>
-        <div class="row">
-            <img src="https://2021.igem.org/wiki/images/c/ce/T--DUT_China--neu02.png" alt=""
-                 class="col-12  col-md-8 mx-auto"></div>
-        <p>Click <a href="http://2021.igem.org/Team:NEU_CHINA/Collaborations" target="_blank">here</a> to visit their
-            wiki.</p>
-
-
-    </article>
-
-
-    <article class="article">
-        <h1>Tongji_China<a href="http://2021.igem.org/Team:Tongji_China/Collaborations" target="_blank">
-            <svg class="icon" style="width: 1em;height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
-                 viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1714">
-                <path d="M607.934444 417.856853c-6.179746-6.1777-12.766768-11.746532-19.554358-16.910135l-0.01228 0.011256c-6.986111-6.719028-16.47216-10.857279-26.930349-10.857279-21.464871 0-38.864146 17.400299-38.864146 38.864146 0 9.497305 3.411703 18.196431 9.071609 24.947182l-0.001023 0c0.001023 0.001023 0.00307 0.00307 0.005117 0.004093 2.718925 3.242857 5.953595 6.03853 9.585309 8.251941 3.664459 3.021823 7.261381 5.997598 10.624988 9.361205l3.203972 3.204995c40.279379 40.229237 28.254507 109.539812-12.024871 149.820214L371.157763 796.383956c-40.278355 40.229237-105.761766 40.229237-146.042167 0l-3.229554-3.231601c-40.281425-40.278355-40.281425-105.809861 0-145.991002l75.93546-75.909877c9.742898-7.733125 15.997346-19.668968 15.997346-33.072233 0-23.312962-18.898419-42.211381-42.211381-42.211381-8.797363 0-16.963347 2.693342-23.725354 7.297197-0.021489-0.045025-0.044002-0.088004-0.066515-0.134053l-0.809435 0.757247c-2.989077 2.148943-5.691629 4.669346-8.025791 7.510044l-78.913281 73.841775c-74.178443 74.229608-74.178443 195.632609 0 269.758863l3.203972 3.202948c74.178443 74.127278 195.529255 74.127278 269.707698 0l171.829484-171.880649c74.076112-74.17435 80.357166-191.184297 6.282077-265.311575L607.934444 417.856853zM855.61957 165.804257l-3.203972-3.203972c-74.17742-74.178443-195.528232-74.178443-269.706675 0L410.87944 334.479911c-74.178443 74.178443-78.263481 181.296089-4.085038 255.522628l3.152806 3.104711c3.368724 3.367701 6.865361 6.54302 10.434653 9.588379 2.583848 2.885723 5.618974 5.355985 8.992815 7.309476 0.025583 0.020466 0.052189 0.041956 0.077771 0.062422l0.011256-0.010233c5.377474 3.092431 11.608386 4.870938 18.257829 4.870938 20.263509 0 36.68962-16.428158 36.68962-36.68962 0-5.719258-1.309832-11.132548-3.645017-15.95846l0 0c-4.850471-10.891048-13.930267-17.521049-20.210297-23.802102l-3.15383-3.102664c-40.278355-40.278355-24.982998-98.79612 15.295358-139.074476l171.930791-171.830507c40.179095-40.280402 105.685018-40.280402 145.965419 0l3.206018 3.152806c40.279379 40.281425 40.279379 105.838513 0 146.06775l-75.686796 75.737962c-10.296507 7.628748-16.97358 19.865443-16.97358 33.662681 0 23.12365 18.745946 41.87062 41.87062 41.87062 8.048303 0 15.563464-2.275833 21.944801-6.211469 0.048095 0.081864 0.093121 0.157589 0.141216 0.240477l1.173732-1.083681c3.616364-2.421142 6.828522-5.393847 9.529027-8.792247l79.766718-73.603345C929.798013 361.334535 929.798013 239.981676 855.61957 165.804257z"
-                      p-id="1715"></path>
-            </svg>
-        </a></h1>
-        <p>In order to contain the possible contamination of genes in the environment, we've decided to adopted a
-            kill-switch system inspired by 2021 Tongji_China iGEM team (More details in <a
-                    href="https://2021.igem.org/Team:DUT_China/Proof_Of_Concept" target="_blank">Proof of Concept</a>).
+        <h3>名称：凯泽斯劳滕大学2019 iGEM团队
+        </h3>
+        <div class="figures">
+            <div class="row">
+                <img src="img/collaboration/32.png" alt=""
+                     class="col-12 col-md-8 mx-auto">
+            </div>
+        </div>
+        <p>
+            我们与来自德国凯泽斯劳滕大学2019的iGEM校友进行沟通，他们也致力于关注PET污染威胁。通过这种在线交流，我们了解了塑料降解当前情况和局限性，这些汇报与交流在我们的最终项目中发挥了重要作用。他们的工作主要涉及通过引入真核分泌平台——衣原体降解塑料，其有效地分泌两种降解酶并粘附在微塑料表面，使PET可以持续暴露于酶并被降解。我们的在线会议充分讨论了以往这一领域的所有研究，以及未来可能进一步加速环境中PET分解的策略。通过这次讨论，我们了解了当前PET降解的局限性：1.高温可能不适用于当前的温和酶，如IsPET酶。2.最新发现的能在高温下表现处完美性能的酶可能无法将积累的MHET转化为具有经济价值的最终单体TPA。3.PET的疏水表面使酶难以有效粘附。因此，在这次沟通之后，我们认识到该领域的核心挑战之一是在温和的温度下以更高的速率降解积聚的PET。大多数积聚在环境中的PET只能在室温下降解，此外，采用高温等工业方法能会对自然环境造成进一步的污染。</p>
+        <p><b>收获:</b>我们认识到目前面临的巨大挑战是如何实现室温下有效降解PET塑料，另外，我们进一步了解了PET降解的关键局限性的当前阶段，并决定将2016年发现的IsPETase而不是2020年报告的LCC酶应用于我们的项目，因为IsPETase可能适用于在温和温度下降解PET，并与MHETase结合以加速反应速率。
         </p>
-        <p>Click <a href="http://2021.igem.org/Team:Tongji_China/Collaborations" target="_blank">here</a> to visit their
-            wiki.</p>
+        <h3>名称：春流河污水处理有限公司
+        </h3>
+        <div class="figures">
+            <div class="row">
+                <img src="img/collaboration/33.png" alt=""
+                     class="col-12 col-md-8 mx-auto">
+            </div>
+        </div>
+        <p>
+            大连春流河污水处理有限公司始建于1982年，1986年投入使用。是东北地区最早建成的城市二级污水处理厂。2017年，大连春流河污水处理有限公司二期升级改造，采用先进的污水处理技术。该厂主要采用相应的物理、化学、生物等方法进行污水处理和净化。我们的沟通重点是污水处理工艺和与废水废物相关的行业标准。我们十分关注废水处理厂塑料的行业标准，但工作人员透露，他们从来不知道任何与微塑料相关的知识，并且在我们介绍之后，他们说现有的工艺无法从水中去除微塑料，因为相关设备最初没有考虑去除积聚的微塑料。这出乎我们的预期，即使是专业工人也不太关注废水中的塑料加工。这意味着污水中的塑料处理经常被忽视。许多来自世界各地的研究团队已经检测到塑料可存在于许多类型的水中，包括废水处理系统。然而，淳流河污水处理有限公司对水中微塑料的忽视，可能对人类健康和环境造成威胁。目前关于降解塑料（包括PET材料）的技术仍然有限，由于进一步的污染和不便，高温下的进一步加工可能不适用。因此，在室温下有效检测和降解积聚的PET是紧迫的。</p>
+        <p><b>收获:</b>与污水处理厂的交流暴露了终端处理厂不太注意水中PET的积聚问题。通过这次对话和后续数据验证，我们知道，在净水过程中，PET加工没有统一的标准，因此需要统一的立法提案。这次调研更加鼓励我们提出相应的立法建议，呼吁我们更加重视积累在环境和社区中PET和其他塑料的去除。
+        </p>
+        <h2>第二阶段</h2>
+        <p>
+            为了解决在温和温度下积累的PET有效降解的问题，我们希望找到一种安全有效的方法。首先，我们总结并比较了以前文献报道的某些方法。其中，我们认为人工设计蛋白骨架与PET降解酶相结合是最有效的方法，这种方法可以减少对酶结构稳定性的干扰并提升效率。我们认为，开发这种用于PET降解的新方法具有重要的现实意义。为了进一步了解其特点和其他相关问题，我们访问了现阶段的专家和研究人员来设计我们的项目。</p>
+        <h3>姓名：康巍</h3>
+        <div class="figures">
+            <div class="row">
+                <img src="img/collaboration/img_12.png" alt=""
+                     class="col-12 col-md-2 mx-auto">
+            </div>
+        </div>
+        <p>职业：大连理工大学生物工程学院副教授</p>
+        <p>领域：蛋白质化学、合成生物学、化学生物学</p>
+        <p>
+            康副教授对我们的项目表示了极大的兴趣，这可能与他新发现的RIAD-RIDD二聚体肽相互作用有关。这两种类型的肽彼此具有很强的亲和力。在他的启发下，我们提出IsPETase和MHETase可以分别融合到RIDD和RIAD，通过中间递送显着加速PET降解，以便与这两种酶活性位点有更紧密的勿理接触。以前的一项研究已经证明，IsPET酶和MHETase的组合显着加速了PET降解。此外，我们新的灵感设计可以进一步加速酶的降解速度，而不会干扰酶的活性位点结构或酶活性。副教授康先生鼓励我们利用他新发现的系统。</p>
+        <p>
+            通过这次关键的交流，我们获得了利用RIDD-RIAD系统构建我们的人造PET降解酶的灵感，该酶通过中间递送显著促进提高PET降解效率，同时，我们还邀请了副教授康巍作为团队顾问来指导我们的项目。我们决定将RIDD-RIAD系统应用到我们的项目中。</p>
+        <h3>名称：中国药科大学</h3>
+        <div class="figures">
+            <div class="row">
+                <img src="img/collaboration/img_11.png" alt=""
+                     class="col-12 col-md-4 mx-auto">
+            </div>
+        </div>
+        <p>我们与中国药科大学2021年的iGEM团队就塑料降解进行了沟通。他们的团队致力于降解PE材料，PE材料也是塑料的常用形式之一。在沟通过程中，他们的团队提出，塑料的疏水表面是限制降解速度的重要因素之一，包括PET和PE。是否存在可能的方法来缓解这一限制？受他们团队的启发，我们获得了一种名为疏水剂的新型功能蛋白，其结构具有高度的柔韧性，能够粘附在疏水塑料表面，同时保持亲水表面暴露于水相。随着这种新的功能蛋白的参与，PET表面与酶接触可能性增加。</p>
+        <p><b>收获：</b>疏水酚曾经用于提高PET降解速率，然而，由于在温和温度下缺乏高效的酶，其效率在当时受到限制，因此被科学家长期忽视。通过与中国药科大学2021
+            iGEM团队的讨论，我们了解了疏水蛋白的相关功能和特点，并受到启发，重新设计了我们的项目。我们将这种新蛋白融合到RIAD中，并构建了人工设计的骨架系统，这种疏水蛋白可以显著改善我们项目的设计。我们还决定与中国药科大学的iGEM团队进一步合作。</p>
+        <h3>名称：天津大学2021 iGEM团队</h3>
+        <div class="figures">
+            <div class="row">
+                <img src="img/collaboration/img_13.png" alt=""
+                     class="col-12 col-md-8 mx-auto">
+            </div>
+        </div>
+        <p>浏览之前的iGEM wiki页面，我们注意到来自天津大学的2020
+            iGEM团队致力于通过蛋白质进化方法提高IsPEase的活性，该团队不断参加iGEM竞赛。我们积极联系该团队的学生领导和负责干实验的学生。从这种联系中，我们了解到IsPEase在温和温度下具有完美性能，然而，其热稳定性有限。他们的工作是致力于提高其热稳定性和酶活性。他们愿意与我们分享他们具有更出色特征的新突变蛋白质序列。我们还同时向他们的团队提供了表达MHETase蛋白的构建工程细菌。他们的团队负责为IsPETase序列提供良好的性能，我们负责通过人工设计骨架改进IsPETase。此外，我们的两个团队干实验成员相互交流，因为我们都选择应用分子动力学模拟来探索和识别支持项目指定的结构信息。我们分享了与仿真系统以及如何正确设置参数的相关信息。从我们与干实验相关的交流中，我们都认识到IsPETase的C末端太靠近酶活性中心，应该避免将我们人工设计的支架融合到这个位置。最后，他们的团队邀请我们参观他们的实验室，并分享有关人类实践的信息，在这些信息中，我们与他们一起分享了我们从利益相关者那里获得的信息。我们决定与天津大学2021
+            iGEM团队在湿实验，干实验，人体实践等不同领域进行合作。</p>
+        <p><b>收获：</b>我们决定与天津大学的2021
+            iGEM团队进一步合作，在接下来的几个月里，我们成功共同完成了商业计划和立法提案。我们还与他们的团队分享了分子动力学模拟的干实验参数验证。与有关PET利益相关者和相关行业的信息共享。为我们提供了建立PET降解检测方法的必要协议。我们获得了改进的IsPETase序列和更有价值的结构信息，这为我们人为设计的支架融合顺序决策做出了重大贡献。</p>
+        <h2>第三阶段</h2>
+        <p>合成生物学和蛋白质工程研究领域的专家对通过合成生物学方法利用遗传元素有着深刻的理解。因此，我们希望我们的项目在他们的指导下变得合理。同时，他们的专业建议也极大地支持了我们的项目和实验的顺利进行。在这个阶段，我们启动了我们的实验部门，在不同专家的指导下，我们的许多想象力正在成为现实。</p>
+        <h3>姓名：张子英</h3>
+        <div class="figures">
+            <div class="row">
+                <img src="img/collaboration/34.png" alt=""
+                     class="col-12 col-md-4 mx-auto">
+            </div>
+        </div>
+        <p>职业：广州耀信信息技术有限公司总经理</p>
+        <p>领域：大分子模拟和计算专家</p>
+        <div class="figures">
+            <div class="row">
+                <img src="img/collaboration/35.png" alt=""
+                     class="col-12 col-md-4 mx-auto">
+            </div>
+        </div>
+        <p>由于未知原因，我们的模拟蛋白质系统在显式模拟中崩溃。因此，我们与张先生讨论并获得进一步的帮助。经过反复检查，张先生终于发现了原因所在。我们模拟文档中的拓扑不包括二硫键，这最终导致我们模拟结构的崩溃。同时，他还指出，TIT3P可能不准确，无法模拟我们的系统，因为它是一种早期的模型，太旧且不精确，无法模拟我们的结构。</p>
+        <p><b>总结：</b>重建我们的拓扑结构，适用于通过分子动力学模拟进行模拟。用更先进的水模型代替原来的TIT3P水模型。</p>
+        <h3>姓名：冯彦斌</h3>
+        <div class="figures">
+            <div class="row">
+                <img src="img/collaboration/36.png" alt=""
+                     class="col-12 col-md-4 mx-auto">
+            </div>
+        </div>
+        <p>职业：大连理工大学生物工程学院副教授</p>
+        <p>领域：生物催化剂和由蛋白质进化引导的生物合成</p>
+        <p>我们与副教授冯彦斌的会面集中在我们的信号肽上。经过一个月的实验，我们的实验结果表明，所应用的pelB信号肽不足以有效分泌PETase，MHETase和Phophabin。因此，我们一直在寻找一种新的替代解决方案来生产PETase，MHETase，疏水蛋白作为复合物，然后我们向副教授冯彦斌寻求帮助。他建议我们应该去掉信号肽，在细胞质中合成模块化酶系统。根据先前发表的文章中报道的信号转运机制，维持信号肽将防止每种酶的进一步折叠。因此，在我们的酶序列中使用信号肽，大多数酶不会成功地折叠并在细胞质中滞后。这些酶中只有少数成功分泌然后折叠。根据我们的实验结果，在细胞质中组装这些酶，然后破碎细胞以获得我们的目标酶。此外，在我们的研究中应用信号肽的可行性仅在不含RIDD和GSlinker的游离PETase中得到证明。它可能不适用于进一步MHETase和疏水酚的分泌。</p>
+        <p>收获：在我们的研究中维持pelB信号肽的可行性需要根据先前发表的文章和我们的实验结果重新考虑。通过超声波释放的组装复合物将更适用和有效地获得我们的目标酶复合物。</p>
+        <h3>姓名：朱成霸</h3>
+        <div class="figures">
+            <div class="row">
+                <img src="img/collaboration/37.png" alt=""
+                     class="col-12 col-md-4 mx-auto">
+            </div>
+        </div>
+        <p>职业：亚琛工业大学博士后</p>
+        <p>领域：微藻工程与塑料降解</p>
+        <div class="figures">
+            <div class="row">
+                <img src="img/collaboration/38.png" alt=""
+                     class="col-12 col-md-4 mx-auto">
+            </div>
+        </div>
+        <p>我们有幸与朱博士讨论了酶活性检测问题。在我们的实验中，我们发现参考组和诱导蛋白表达都能表达相关的酶活性，这让我们感到困惑。朱博士还致力于与IsPETase相关的研究，因此，我们寻求朱博士的进一步帮助和解决方案。最后，在听取了我们详细的实验程序后，他指出，我们的模型底物4-（对硝基苯基）丁酸酯在暴露于光和Tris-HCl缓冲液时可能很容易降解为最终产物，这可能是我们实验结果异常的原因。他建议我们应该把实验放在黑暗的地方。我们最终证实，暴露在光线下是我们实验失败的主要原因。在他的帮助下，我们完成了相应的实验。</p>
+        <p><b>收获：</b>我们认识到实验结果异常的原因，最终在朱博士的帮助下完成了实验。他指出，我们的模型底物4-（对硝基苯基）丁酸酯在暴露于光和Tris-HCl缓冲液时可能很容易降解为最终产物，这可能是我们实验结果异常的原因。</p>
+        <h2>第四阶段</h2>
+        <p>我们目前正试图利用人工设计的支架与降解酶融合，以加速PET在温和温度下的分解速度。我们希望应用合成生物学来解决其行业应用面临的挑战，包括蛋白质表达，收集和使用。从实验室到行业，未来应用面临哪些挑战，我们如何最大限度地发挥对社会的影响？</p>
+        <h3>项目可持续性</h3>
+        <h4>姓名：樊宇</h4>
+        <div class="figures">
+            <div class="row">
+                <img src="img/collaboration/39.png" alt=""
+                     class="col-12 col-md-4 mx-auto">
+            </div>
+        </div>
+        <p>职业：大连理工大学外语学院教授</p>
+        <p>领域：语言与外交、国际政策研究</p>
+        <p>大连理工大学外语学院范教授，拥有近十年领导模拟联合国的经验，对联合国的各种文件和背景有着深刻的理解。</p>
+        <p>我们与范教授进行了交谈。我们详细阐述了该项目的目的和现实意义。范教授认为，我们的项目完全符合可持续发展目标的基本核心：可持续城市和社区以及陆地生活。我们的项目以环境保护为基础，以工程思维和方法解决人类问题，为可能的PET降解提供了便捷的方式，对防止PET材料在环境中积累具有积极意义和价值。我们的项目在可持续城市和社区以及陆上生活方面为可持续发展目标做出了贡献。但老师也提到，所涉及的生物安全问题不容忽视，特别是工程细菌传播抗性基因、污染环境、危害人体的潜力。可持续发展目标的生物安全保护和联合国关于生物安全的相关文件都关注了相关问题。我们应该更深入地了解可持续发展目标与iGEM社区之间的联系以及人类作为一个物种之间的联系，并明确可持续发展概念的责任和感受。</p>
+        <p><b>收获：</b>关注可持续、生物安全、社会责任</p>
+        <h4>名称：金土地集团</h4>
+        <div class="figures">
+            <div class="row">
+                <img src="img/collaboration/310.png" alt=""
+                     class="col-12 col-md-8 mx-auto">
+            </div>
+        </div>
+        <p>现阶段，我们重新采访了金土地集团的研究人员，他们在中国可降解塑料市场和领域都是专业的。他们明确提到了生物安全和酶实际使用效率的重要性。任何产品都需要确保它们具有相应的功能，没有安全风险。由于缺乏这些必要的原则，许多实验产品不能很好地满足社会需求。我们还参观了他们的实验室和生产线，这增强了我们对真正可持续生产模式的理解。同时，它们提醒我们研究政府要求的所有相关法律，以使我们的产品安全、规范。用于塑料降解和回收的工业生产的相关法律和条款由其公司经理提供，并由专业工程师介绍。</p>
+        <p><b>收获：</b>通过这次访问，我们通过工程师和利益相关者了解了此酶的可持续生产模式。通过项目和相关领域的基本条款和法律的介绍，我们对当前的工业生产技术和不同部门之间的合作有了更多的了解。在这些基础上，我们重新了解如何向市场宣传一种新的产品，通过该产品我们制定了我们的业务计划。</p>
+
+        <h3>公众接受</h3>
+        <p>我们希望我们的项目能够促进PET降解的研究。公众对新事物的出现持保守和犹豫的态度。为了进一步获知公众对我们提出的方法的接受程度和对当前PET污染状况的了解程度，我们设计的降解酶在工业上应用和推广的难度，以及哪些因素会影响公众对新事物的接受程度，我们进行了详细的问卷调查。详细的问卷结果和分析可以在下面找到。</p>
+        <p>我们希望我们的项目能够改善塑料污染的紧迫问题，并提供一种更有效，适用和绿色的生物降解方法。在与企业和社会的交谈过程中，我们意识到我们项目的挑战之一是让人们真正关注和理解塑料污染与自身生活之间的密切联系，特别是在与塑料企业交谈的过程中，我们发现目前的塑料成分主要是PE，
+            PET等，PE的降解和回收方法较为成熟，但PET并不乐观。而目前PET塑料的降解方法污染严重，耗能大，并不是理想的降解方法。正是在此启发下，我们的项目诞生了。我们进行了详细的问卷调查，以进一步了解公众对塑料污染和塑料成分的了解，并向公众推广我们的项目。详细的问卷结果和分析如下。</p>
+        <div class="figures">
+            <div class="row">
+                <img src="img/collaboration/img.png" alt=""
+                     class="col-12 col-md-8 mx-auto">
+            </div>
+        </div>
+        <p><b>问题1：你的工作是什么？</b></p>
+        <p>根据调查问卷结果显示，受访者的职业分布大致平衡。学生人数为219人，研究人员人数为167人，普通大众人数为182人，大致平衡，符合我们的预期。受访者的职业分布广泛，调查结果基本上可以反映社会上不同职业人士的意见。</p>
+        <div class="figures">
+            <div class="row">
+                <img src="img/collaboration/img_1.png" alt=""
+                     class="col-12 col-md-8 mx-auto">
+            </div>
+        </div>
+        <p><b>问题2：您通常使用什么来携带购物物品？</b></p>
+        <p>从整体数据来看，近三分之一的人在日常生活中会使用超市提供的塑料袋，塑料袋在人们的日常使用中广泛分布，只有十分之一的人会重复使用塑料袋，这意味着如果没有有效的降解塑料的方法，塑料将在日常生活中不断积累。</p>
+        <div class="figures">
+            <div class="row">
+                <img src="img/collaboration/img_2.png" alt=""
+                     class="col-12 col-md-8 mx-auto">
+            </div>
+        </div>
+        <p><b>问题3：你介意垃圾袋是否可降解吗？</b></p>
+        <p>超过一半的受访者并不关心塑料是否可降解。虽然可降解塑料已经普及到一定程度，但人们在生活中使用可降解塑料的意识并不强，这意味着所使用的塑料大多还是难以降解的塑料制品。这给了我们一些启示：一是可以进行可降解塑料的宣传推广;其次，我们应该为现有的塑料堆积找到更广泛适用的降解方案。</p>
+        <div class="figures">
+            <div class="row">
+                <img src="img/collaboration/img_3.png" alt=""
+                     class="col-12 col-md-8 mx-auto">
+            </div>
+        </div>
+        <p><b>问题4：您认为PET塑料容易降解吗？</b></p>
+        <p>经过对PET塑料的简要科研，超过一半的受访者认为PET塑料容易降解，这与我们目前面临的情况大相径庭，并且没有高效、温和有效的降解PET塑料的方法，这给我们带来的启示是，人们对塑料材料的了解不足误导了他们使用塑料制品的态度和方式。</p>
+        <div class="figures">
+            <div class="row">
+                <img src="img/collaboration/img_4.png" alt=""
+                     class="col-12 col-md-8 mx-auto">
+            </div>
+        </div>
+        <p><b>问题5：使用生物方法降解PET塑料有什么好处？</b></p>
+        <p>就PET生物降解的好处而言，大多数人认为其降解速度快，环境效益好，成本低。这显示了公众对生物技术的认可。</p>
+        <p>相比之下，"生物降解不会造成二次污染"的想法一直被一些人怀疑。因此，我们需要有关最终产品验证和安全性的更有力的证据，以确保我们的产品被接受和使用。</p>
+        <div class="figures">
+            <div class="row">
+                <img src="img/collaboration/img_5.png" alt=""
+                     class="col-12 col-md-8 mx-auto">
+            </div>
+        </div>
+        <p><b>问题6：您认为塑料降解本质上是非常困难还是容易的？</b></p>
+        <p>令我们震惊的是，近一半的人认为塑料降解非常简单。塑料的日常使用可能会让大家想当然地认为它容易降解，最终导致塑料垃圾的广泛现象和严重的污染。虽然该项目致力于降解塑料，但这些数据也使我们意识到普及教育的必要性。提高公众意识将成为改善环境的有效手段。</p>
+        <div class="figures">
+            <div class="row">
+                <img src="img/collaboration/img_6.png" alt=""
+                     class="col-12 col-md-8 mx-auto">
+            </div>
+        </div>
+        <p><b>问题7：您对将多种功能蛋白连接在一起的方法，即通过多种骨架蛋白降解塑料的方法的接受程度如何？</b></p>
+        <p>从图中可以看出，测试人员对多骨架蛋白质降解方法的认识程度并不高。获批人数仅为13.93%，大多数人对此方法不清楚或有疑问。可以看出，我们的项目有一定的创新和难度。虽然相关研究已经证明，多骨架蛋白可以更好地提高实验效率，但仍需在项目前期和工程过程中充分证明实验的可行性，确保实验能够成功完成并得到公众的认可。</p>
+        <div class="figures">
+            <div class="row">
+                <img src="img/collaboration/img_7.png" alt=""
+                     class="col-12 col-md-8 mx-auto">
+            </div>
+        </div>
+        <p><b>问题8：您认为在哪里可以找到塑料？</b></p>
+        <p>从整体数据来看，受访者对塑料分布集的回答有相对平均的了解，显然受访者对塑料广泛分布如山、海洋和人体仍有一定的认识基础，并认识到塑料扩散的紧迫性和污染解决方案。</p>
+        <div class="figures">
+            <div class="row">
+                <img src="img/collaboration/img_8.png" alt=""
+                     class="col-12 col-md-8 mx-auto">
+            </div>
+        </div>
+        <p><b>问题9：如果有温和有效的塑料降解方法，但成本很高，你会使用它吗？</b></p>
+        <p>根据问卷调查结果，超过80%的人不会使用高效但昂贵的塑料降解方法，表明人们仍然优先考虑经济问题，例如降解解决方案的实用性和成本。这个问题的答案分布大致符合我们的预期，表明我们最终仍在追求优化方法的经济可行性。</p>
+        <div class="figures">
+            <div class="row">
+                <img src="img/collaboration/img_9.png" alt=""
+                     class="col-12 col-md-8 mx-auto">
+            </div>
+        </div>
+        <p><b>问题10：您认为塑料降解研究的紧迫性是什么？</b></p>
+        <p>根据问卷调查的结果，只有不到30%的受访者没有紧迫感，超过30%的受访者认为塑料降解的现状已经非常紧迫。在这方面，我们认为需要向公众推广塑料降解的知识，同时，我们可以积极探索和动员有志向的人与我们一起采取行动。</p>
+        <b>结论：</b>
+        <p>受访者主要是生物行业的从业者和学生，占90%以上。问卷主要调查了相关专业人士对塑料污染的认识及其对塑料生物降解的难度和优势的看法。受访者普遍认为，对塑料降解的研究非常迫切，利用塑料的生物降解对环境有益，不会造成二次污染，但他们对成本和操作便利性持观望态度。</p>
+        <p>词频统计:</p>
+
+
+        <table>
+
+            <tr>
+                <th >词</th>
+                <th >频率</th>
+            </tr>
+            <tr>
+                <td><b>塑料</b></td>
+                <td>57次</td>
+            </tr>
+            <tr>
+                <td><b>降解/可降解</b></td>
+                <td>15次</td>
+            </tr>
+            <tr>
+                <td><b>受 访 者</b></td>
+                <td>7次</td>
+            </tr>
+            <tr>
+                <td><b>宠物</b></td>
+                <td>7次</td>
+            </tr>
+            <tr>
+                <td><b>公共</b></td>
+                <td>6次</td>
+            </tr>
+            <tr>
+                <td><b>污染</b></td>
+                <td>6次</td>
+
+            </tr>
+            <tr>
+                <td><b>紧迫性</b></td>
+                <td>4次</td>
+
+            </tr>
+            <tr>
+                <td><b>有效</b></td>
+                <td>4次</td>
+
+            </tr>
+        </table>
+
+        <div class="figures">
+            <div class="row">
+                <img src="img/collaboration/img_10.png" alt=""
+                     class="col-12 col-md-8 mx-auto">
+            </div>
+        </div>
 
     </article>
 
-
-    <article class="article">
-        <h1>SCAU-China<a href="http://2021.igem.org/Team:SCAU-China/Collaborations" target="_blank">
-            <svg class="icon" style="width: 1em;height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
-                 viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1714">
-                <path d="M607.934444 417.856853c-6.179746-6.1777-12.766768-11.746532-19.554358-16.910135l-0.01228 0.011256c-6.986111-6.719028-16.47216-10.857279-26.930349-10.857279-21.464871 0-38.864146 17.400299-38.864146 38.864146 0 9.497305 3.411703 18.196431 9.071609 24.947182l-0.001023 0c0.001023 0.001023 0.00307 0.00307 0.005117 0.004093 2.718925 3.242857 5.953595 6.03853 9.585309 8.251941 3.664459 3.021823 7.261381 5.997598 10.624988 9.361205l3.203972 3.204995c40.279379 40.229237 28.254507 109.539812-12.024871 149.820214L371.157763 796.383956c-40.278355 40.229237-105.761766 40.229237-146.042167 0l-3.229554-3.231601c-40.281425-40.278355-40.281425-105.809861 0-145.991002l75.93546-75.909877c9.742898-7.733125 15.997346-19.668968 15.997346-33.072233 0-23.312962-18.898419-42.211381-42.211381-42.211381-8.797363 0-16.963347 2.693342-23.725354 7.297197-0.021489-0.045025-0.044002-0.088004-0.066515-0.134053l-0.809435 0.757247c-2.989077 2.148943-5.691629 4.669346-8.025791 7.510044l-78.913281 73.841775c-74.178443 74.229608-74.178443 195.632609 0 269.758863l3.203972 3.202948c74.178443 74.127278 195.529255 74.127278 269.707698 0l171.829484-171.880649c74.076112-74.17435 80.357166-191.184297 6.282077-265.311575L607.934444 417.856853zM855.61957 165.804257l-3.203972-3.203972c-74.17742-74.178443-195.528232-74.178443-269.706675 0L410.87944 334.479911c-74.178443 74.178443-78.263481 181.296089-4.085038 255.522628l3.152806 3.104711c3.368724 3.367701 6.865361 6.54302 10.434653 9.588379 2.583848 2.885723 5.618974 5.355985 8.992815 7.309476 0.025583 0.020466 0.052189 0.041956 0.077771 0.062422l0.011256-0.010233c5.377474 3.092431 11.608386 4.870938 18.257829 4.870938 20.263509 0 36.68962-16.428158 36.68962-36.68962 0-5.719258-1.309832-11.132548-3.645017-15.95846l0 0c-4.850471-10.891048-13.930267-17.521049-20.210297-23.802102l-3.15383-3.102664c-40.278355-40.278355-24.982998-98.79612 15.295358-139.074476l171.930791-171.830507c40.179095-40.280402 105.685018-40.280402 145.965419 0l3.206018 3.152806c40.279379 40.281425 40.279379 105.838513 0 146.06775l-75.686796 75.737962c-10.296507 7.628748-16.97358 19.865443-16.97358 33.662681 0 23.12365 18.745946 41.87062 41.87062 41.87062 8.048303 0 15.563464-2.275833 21.944801-6.211469 0.048095 0.081864 0.093121 0.157589 0.141216 0.240477l1.173732-1.083681c3.616364-2.421142 6.828522-5.393847 9.529027-8.792247l79.766718-73.603345C929.798013 361.334535 929.798013 239.981676 855.61957 165.804257z"
-                      p-id="1715"></path>
-            </svg>
-        </a></h1>
-        <p>The general direction of our research this year is to use microorganisms to degrade microplastics in sewage.
-            After learning that SCAU-China's research direction is to use microalgae to degrade heavy metals in sewage,
-            we
-            found that we are all closely related projects to environmental governance. In particular, their respective
-            biological products have the potential to undergo in-situ degradation in nature. Therefore, we have reached
-            a
-            cooperative relationship with SCAU-China. The two parties inspire each other's research ideas and exchange
-            information resources in periodic online communication, and each workgroup as a unit, through multi-angle
-            and
-            deep-level cooperation, has jointly harvested a series of results.</p>
-        <div class="row">
-            <img src="https://2021.igem.org/wiki/images/d/d9/T--DUT_China--coll-16.png" alt=""
-                 class="col-12 col-md-8 mx-auto">
-        </div>
-        <p>The specific cooperation matters are as follows:</p>
-        <p>1. Throughout the competition, both sides will take environmental governance as the point of integration and
-            provide services for each other's goals based on operating their systems. The two working paths of degrading
-            heavy metals and degrading microplastics complement each other and jointly solve the pollution problem in
-            the
-            water environment.</p>
-        <p>2. The wet experiment group members of the two teams jointly raised and discussed the following questions:
-            whether it is feasible to use the extracellular matrix EPS to adsorb heavy metals to help bind heavy metal
-            ions;
-            whether to use the AHL response to <i>Chlamydomonas reinhardtii</i> to stimulate the expression of
-            Chlamydomonas EPS
-            feasible. Though we didn't choose <i>Chlamydomonas reinhardtii</i> as base cell in the end, our
-            collaboration on EPS and angel was benefit as well.</p>
-        <p>3. The two experimental groups also made meaningful exchanges in molecular dynamics simulation.</p>
-        <p>4. The cooperation content of the two modeling teams is: the two parties jointly use the equipment provided
-            by
-            SCAU-China to build related models; SCAU-China provides certain help suggestions and resource support in the
-            outsourcing project of quantum chemical simulation by SCAU-China.</p>
-        <p>5. The cooperation mode of the two art teams is as follows: The two sides discussed and put forward the
-            design
-            concept of "Chlamydia Brothers", and added interactive elements such as "hand in hand", and planned to
-            conduct joint publicity on the team uniform design and other art tasks of both parties.</p>
-        <p>6. The cooperation content of the two teams of HP is: the HP of both parties went to the local sewage
-            treatment
-            plant to conduct on-site investigations, consulted and inspected a series of issues jointly formulated by
-            the
-            two parties; SCAU-China collected water samples before and after treatment of the sewage plant, we detects
-            and
-            analyzes indicators such as the content of microplastics in water samples. We learned from the interview
-            that
-            there is a general lack of microplastics detection in manufacturing wastewater in southern China. However,
-            microplastics are gradually being valued in sewage.</p>
-
-        <div class="row">
-            <img src="https://2021.igem.org/wiki/images/d/df/T--DUT_China--coll-17.jpeg" alt=""
-                 class="col-12 col-md-8 mx-auto">
-        </div>
-        <div class="row">
-            <img src="https://2021.igem.org/wiki/images/0/09/T--DUT_China--coll-18.jpeg" alt=""
-                 class="col-12 col-md-6 mx-auto">
-        </div>
-        <p>7. The two parties jointly mobilized other iGEM teams engaged in algae treatment to join the cooperation and
-            plan
-            to establish a microalgae alliance to expand the influence of the project.</p>
-        <p>8. To achieve the above cooperation goals better, we have held several online conferences with SCAU-China and
-            participated in the CCiC held in Shanghai in August this year.</p>
-        <p>Click <a href="http://2021.igem.org/Team:SCAU-China/Collaborations" target="_blank">here</a> to visit their
-            wiki.</p>
-
-    </article>
-    <article class="article">
-        <h1>CPU_China<a href="http://2021.igem.org/Team:CPU_CHINA/Collaborations" target="_blank">
-            <svg class="icon" style="width: 1em;height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
-                 viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1714">
-                <path d="M607.934444 417.856853c-6.179746-6.1777-12.766768-11.746532-19.554358-16.910135l-0.01228 0.011256c-6.986111-6.719028-16.47216-10.857279-26.930349-10.857279-21.464871 0-38.864146 17.400299-38.864146 38.864146 0 9.497305 3.411703 18.196431 9.071609 24.947182l-0.001023 0c0.001023 0.001023 0.00307 0.00307 0.005117 0.004093 2.718925 3.242857 5.953595 6.03853 9.585309 8.251941 3.664459 3.021823 7.261381 5.997598 10.624988 9.361205l3.203972 3.204995c40.279379 40.229237 28.254507 109.539812-12.024871 149.820214L371.157763 796.383956c-40.278355 40.229237-105.761766 40.229237-146.042167 0l-3.229554-3.231601c-40.281425-40.278355-40.281425-105.809861 0-145.991002l75.93546-75.909877c9.742898-7.733125 15.997346-19.668968 15.997346-33.072233 0-23.312962-18.898419-42.211381-42.211381-42.211381-8.797363 0-16.963347 2.693342-23.725354 7.297197-0.021489-0.045025-0.044002-0.088004-0.066515-0.134053l-0.809435 0.757247c-2.989077 2.148943-5.691629 4.669346-8.025791 7.510044l-78.913281 73.841775c-74.178443 74.229608-74.178443 195.632609 0 269.758863l3.203972 3.202948c74.178443 74.127278 195.529255 74.127278 269.707698 0l171.829484-171.880649c74.076112-74.17435 80.357166-191.184297 6.282077-265.311575L607.934444 417.856853zM855.61957 165.804257l-3.203972-3.203972c-74.17742-74.178443-195.528232-74.178443-269.706675 0L410.87944 334.479911c-74.178443 74.178443-78.263481 181.296089-4.085038 255.522628l3.152806 3.104711c3.368724 3.367701 6.865361 6.54302 10.434653 9.588379 2.583848 2.885723 5.618974 5.355985 8.992815 7.309476 0.025583 0.020466 0.052189 0.041956 0.077771 0.062422l0.011256-0.010233c5.377474 3.092431 11.608386 4.870938 18.257829 4.870938 20.263509 0 36.68962-16.428158 36.68962-36.68962 0-5.719258-1.309832-11.132548-3.645017-15.95846l0 0c-4.850471-10.891048-13.930267-17.521049-20.210297-23.802102l-3.15383-3.102664c-40.278355-40.278355-24.982998-98.79612 15.295358-139.074476l171.930791-171.830507c40.179095-40.280402 105.685018-40.280402 145.965419 0l3.206018 3.152806c40.279379 40.281425 40.279379 105.838513 0 146.06775l-75.686796 75.737962c-10.296507 7.628748-16.97358 19.865443-16.97358 33.662681 0 23.12365 18.745946 41.87062 41.87062 41.87062 8.048303 0 15.563464-2.275833 21.944801-6.211469 0.048095 0.081864 0.093121 0.157589 0.141216 0.240477l1.173732-1.083681c3.616364-2.421142 6.828522-5.393847 9.529027-8.792247l79.766718-73.603345C929.798013 361.334535 929.798013 239.981676 855.61957 165.804257z"
-                      p-id="1715"></path>
-            </svg>
-        </a></h1>
-        <p>Our cooperative relationship with China Pharmaceutical University is reflected in daily exchanges, meetings,
-            discussions, and learning. We are also multi-enzyme complexes formed by closer physical contact of multiple
-            enzyme active sites, which can significantly accelerate the chemical reaction through intermediate
-            transmission. Multi enzyme complexes can further accelerate the degradation of enzymes without interfering
-            with the structure of enzyme active sites or enzyme activity.</p>
-        <p>Through experiments in May this year, we deeply understood the interaction mechanism between each critical
-            component and calculated the reaction of intermediate products to enzymes, which helps us better explain our
-            system. To apply our complex system to other enzyme systems, we established a modular design and used our
-            module based on an in-depth understanding of the mechanism of action. We also exchanged views on the
-            construction of the complex online.</p>
-        <img src="https://2021.igem.org/wiki/images/1/13/T--DUT_China--partner51.png" alt="" class="col-12">
-        <p>In addition, in May this year, we were invited by the team of Kaiserslautern University in Germany who
-            studied laccases at the environmental track in 2020 to study the laccase project together, so we also
-            invited the team of China Pharmaceutical University who also did the laccase project to communicate, learn
-            appropriate methods and discuss experimental problems with each other.</p>
-        <img src="https://2021.igem.org/wiki/images/b/bd/T--DUT_China--partner61.png" alt="" class="col-12">
-        <p>In the questionnaire survey on the public's awareness of plastic pollution in July 2021, we shared the
-            results of the questionnaire survey to have a larger data sample to ensure the universality of the results.
-            Facts have proved that the results of the questionnaire are still related to the region.</p>
-        <p>We are not only academic and project exchanges but also formed friendships through this cooperation. In the
-            CCiC meeting in August 2021, we had an offline appointment. We not only exchanged information on project
-            experiments but also learned more about each other's schools.</p>
-        <div class="container">
-            <div class="row row-cols-1 row-cols-md-2">
-                <img src="https://2021.igem.org/wiki/images/2/2b/T--DUT_China--partner71.jpeg" alt="">
-                <img src="https://2021.igem.org/wiki/images/2/21/T--DUT_China--partner72.jpeg" alt="">
-            </div>
-        </div>
-        <img src="https://2021.igem.org/wiki/images/f/f7/T--DUT_China--partner81.jpeg" alt="" class="col-12">
-
-        <p>In September 2021, we jointly interviewed the JIN TU DI Group with CPU_China. According to different
-            directions of the project, we discussed and exchanged with professionals of the group on the composition and
-            use of farmers' plastic sheds and films and the feasibility of project solutions. We have gained a lot and
-            further deepened our understanding of the significance and application prospect of the project.</p>
-        <div class="row">
-            <div class="col-12 ">
-                <img src="https://2021.igem.org/wiki/images/6/65/T--DUT_China--partner91.png" alt="">
-            </div>
-        </div>
-        <p>DUT_China and CPU_China are members of Plasticase, a community dedicated to solving the problem of plastic
-            pollution. At the virtual round table "Reshaping the Future", both parties introduced their projects. The
-            other side congratulated us on our success. At the same time, we also sent our blessings to CPU_China and
-            hoped that they can get good experimental results.</p>
-        <div class="container">
-            <div class="row row-cols-1 row-cols-md-2">
-                <img src="https://2021.igem.org/wiki/images/e/e5/T--DUT_China--partner41.jpeg" alt="">
-                <img src="https://2021.igem.org/wiki/images/a/a5/T--DUT_China--partner42.png" alt="">
-            </div>
-        </div>
-
-        <p>In October this year, we also discussed issues related to hydrophobic proteins and shared relevant
-            hydrophobic protein structure libraries. At the same time, we communicated the modeling of a self-organizing
-            neural network, trying to reduce the difficulty of building a comprehensive project model. The university
-            where CPU_China is located does not have high-temperature gel retardation chromatography. However, our
-            school's instrument sharing platform has this equipment, so we preliminarily agreed that subsequent
-            degradation samples of CPU_China could be sent to our school, and we would help them detect PE degradation
-            products.</p>
-        <p>Click <a href="http://2021.igem.org/Team:CPU_CHINA/Collaborations" target="_blank">here</a> to visit their
-            wiki.</p>
-
-    </article>
 </section>
 <div id="footer-point"></div>
 <script>
